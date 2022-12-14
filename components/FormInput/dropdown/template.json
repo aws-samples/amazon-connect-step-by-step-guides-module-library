@@ -1,0 +1,22 @@
+{
+  "Type": "Dropdown",
+  "Fluid": **Enter either true or false**,
+  "Label": "**Enter a label to display in the UI**",
+  "Name": "**Enter a unique name for your component**",
+  "DefaultValue": ["**Add a default value from Options or leave blank**"],
+  "HelperText": "**Enter helper text for your component**",
+  "Multiselect":  **Enter either true or false**,
+  "Clearable": **Enter either true or false**,
+  "Required": **Enter either true or false**,
+  "showErrors": **Enter either true or false**,
+  "Options": [
+    {
+      "Label": "**Enter a label to display in the UI**",
+      "Value": "**Enter a value for your option**"
+    },
+    {
+      "Label": "**Enter a label to display in the UI**",
+      "Value": "**Enter a value for your option**"
+    }
+  ]
+}
