@@ -98,8 +98,8 @@
     {
       "Parameters": {
         "Attributes": {
-          "DefaultFlowForAgentUI": "**Enter a Views contact flow ID** ",
-          "DisconnectFlowForAgentUI": "**Enter a Views contact flow ID",
+          "DefaultFlowForAgentUI": "**Enter a Views contact flow ID**",
+          "DisconnectFlowForAgentUI": "**Enter a Views contact flow ID**",
           "CustomerPhoneNumber": "$.CustomerEndpoint.Address",
           "WorkingQueue": "**Enter a valid queue ARN in your Connect Instance**"
         }

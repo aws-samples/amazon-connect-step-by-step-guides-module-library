@@ -1,0 +1,298 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "3e123b1d-1e3a-47e1-901e-96f89d92297e",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 14.4,
+      "y": 274.40000000000003
+    },
+    "ActionMetadata": {
+      "3e123b1d-1e3a-47e1-901e-96f89d92297e": {
+        "position": {
+          "x": 114.4,
+          "y": 260.8
+        }
+      },
+      "d30575f8-067f-4c45-bc3f-7a7f89a0a804": {
+        "position": {
+          "x": 119.2,
+          "y": 466.40000000000003
+        }
+      },
+      "7e1aeed2-65e7-4287-b04f-78046d2d45cc": {
+        "position": {
+          "x": 1516,
+          "y": 272.8
+        }
+      },
+      "6786ff86-b839-4e61-bbe9-713aabf6602e": {
+        "position": {
+          "x": 596.8000000000001,
+          "y": 516
+        }
+      },
+      "dc68ae87-6d23-4902-82d3-1ad47ca5abbd": {
+        "position": {
+          "x": 816.8000000000001,
+          "y": 518.4
+        }
+      },
+      "f7e94d7a-a783-4066-9dd1-8ef2c961b629": {
+        "position": {
+          "x": 1296.8000000000002,
+          "y": 267.2
+        }
+      },
+      "011eb73e-b9bf-4c32-a7ff-152a3041a9e5": {
+        "position": {
+          "x": 1055.2,
+          "y": 263.2
+        },
+        "parameters": {
+          "QueueId": {
+            "useDynamic": true
+          }
+        },
+        "useDynamic": true
+      },
+      "20d5b75c-eeb6-47b5-b342-b02b52f43cf2": {
+        "position": {
+          "x": 364.8,
+          "y": 262.40000000000003
+        },
+        "children": [
+          "197b0f4a-3ddf-4bce-8b72-65c4395e0dff"
+        ],
+        "dynamicParams": []
+      },
+      "197b0f4a-3ddf-4bce-8b72-65c4395e0dff": {
+        "position": {
+          "x": 364.8,
+          "y": 262.40000000000003
+        },
+        "voiceAuthenticationUseDynamic": false,
+        "voiceAuthenticationResponseTimeUseDynamic": false,
+        "fraudDetectionUseDynamic": false,
+        "fragments": {
+          "SetContactData": "20d5b75c-eeb6-47b5-b342-b02b52f43cf2"
+        }
+      },
+      "3873cfa2-1e9e-453e-a652-8e12389445d1": {
+        "position": {
+          "x": 816,
+          "y": 259.2
+        }
+      },
+      "f0e2806f-194f-4755-8205-1bff617bd42f": {
+        "position": {
+          "x": 595.2,
+          "y": 263.2
+        },
+        "children": [
+          "c1e8ba01-ea0b-4ba3-85f0-465be0ffd8d8"
+        ],
+        "parameters": {
+          "Attributes": {
+            "CustomerPhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "CustomerPhoneNumber"
+        ],
+        "isSplitModule": true
+      },
+      "c1e8ba01-ea0b-4ba3-85f0-465be0ffd8d8": {
+        "position": {
+          "x": 595.2,
+          "y": 263.2
+        },
+        "dynamicParams": [],
+        "isSplitModule": true
+      }
+    },
+    "name": "SBSGuides_Module_VoiceIDHandler",
+    "description": "VoiceID - Contact Flow",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "3e123b1d-1e3a-47e1-901e-96f89d92297e",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "d30575f8-067f-4c45-bc3f-7a7f89a0a804"
+      }
+    },
+    {
+      "Parameters": {
+        "SSML": "<break time=\"1s\"/>"
+      },
+      "Identifier": "d30575f8-067f-4c45-bc3f-7a7f89a0a804",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "20d5b75c-eeb6-47b5-b342-b02b52f43cf2",
+        "Errors": [
+          {
+            "NextAction": "20d5b75c-eeb6-47b5-b342-b02b52f43cf2",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "7e1aeed2-65e7-4287-b04f-78046d2d45cc",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Text": "Error with Set Voice ID block. Please ensure Voice ID is enabled for your Connect instance and that the current contact is voice rather than chat or task."
+      },
+      "Identifier": "6786ff86-b839-4e61-bbe9-713aabf6602e",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "dc68ae87-6d23-4902-82d3-1ad47ca5abbd",
+        "Errors": [
+          {
+            "NextAction": "dc68ae87-6d23-4902-82d3-1ad47ca5abbd",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "dc68ae87-6d23-4902-82d3-1ad47ca5abbd",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {},
+      "Identifier": "f7e94d7a-a783-4066-9dd1-8ef2c961b629",
+      "Type": "TransferContactToQueue",
+      "Transitions": {
+        "NextAction": "7e1aeed2-65e7-4287-b04f-78046d2d45cc",
+        "Errors": [
+          {
+            "NextAction": "7e1aeed2-65e7-4287-b04f-78046d2d45cc",
+            "ErrorType": "QueueAtCapacity"
+          },
+          {
+            "NextAction": "7e1aeed2-65e7-4287-b04f-78046d2d45cc",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "QueueId": "$.Attributes.WorkingQueue"
+      },
+      "Identifier": "011eb73e-b9bf-4c32-a7ff-152a3041a9e5",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "f7e94d7a-a783-4066-9dd1-8ef2c961b629",
+        "Errors": [
+          {
+            "NextAction": "f7e94d7a-a783-4066-9dd1-8ef2c961b629",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "IsVoiceIdStreamingEnabled": "true",
+        "IsFraudDetectionEnabled": "true",
+        "IsVoiceAuthenticationEnabled": "true",
+        "VoiceAuthenticationThreshold": "50",
+        "VoiceAuthenticationResponseTime": "10",
+        "FraudDetectionThreshold": "50"
+      },
+      "Identifier": "20d5b75c-eeb6-47b5-b342-b02b52f43cf2",
+      "Type": "UpdateContactData",
+      "Transitions": {
+        "NextAction": "197b0f4a-3ddf-4bce-8b72-65c4395e0dff",
+        "Errors": [
+          {
+            "NextAction": "6786ff86-b839-4e61-bbe9-713aabf6602e",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "197b0f4a-3ddf-4bce-8b72-65c4395e0dff",
+      "Type": "StartVoiceIdStream",
+      "Transitions": {
+        "NextAction": "f0e2806f-194f-4755-8205-1bff617bd42f",
+        "Errors": [
+          {
+            "NextAction": "6786ff86-b839-4e61-bbe9-713aabf6602e",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "SSML": "<speak> Speak anything for 10 seconds to be authenticated with Voice ID. You will be transferred after <break time=\"15s\"/></speak>"
+      },
+      "Identifier": "3873cfa2-1e9e-453e-a652-8e12389445d1",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "011eb73e-b9bf-4c32-a7ff-152a3041a9e5",
+        "Errors": [
+          {
+            "NextAction": "011eb73e-b9bf-4c32-a7ff-152a3041a9e5",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "DefaultFlowForAgentUI": "**Enter a Views contact flow ID**",
+          "CustomerPhoneNumber": "$.CustomerEndpoint.Address",
+          "WorkingQueue": "**Enter a valid queue ARN in your Connect Instance**"
+        }
+      },
+      "Identifier": "f0e2806f-194f-4755-8205-1bff617bd42f",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "c1e8ba01-ea0b-4ba3-85f0-465be0ffd8d8",
+        "Errors": [
+          {
+            "NextAction": "3873cfa2-1e9e-453e-a652-8e12389445d1",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "CustomerId": "SAMPLE_CUSTOMER_ID"
+      },
+      "Identifier": "c1e8ba01-ea0b-4ba3-85f0-465be0ffd8d8",
+      "Type": "UpdateContactData",
+      "Transitions": {
+        "NextAction": "3873cfa2-1e9e-453e-a652-8e12389445d1",
+        "Errors": [
+          {
+            "NextAction": "3873cfa2-1e9e-453e-a652-8e12389445d1",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}
