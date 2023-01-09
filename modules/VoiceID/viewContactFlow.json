@@ -1,0 +1,390 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "49c01c33-762f-4f13-b1ad-83c1a930ea1f",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "49c01c33-762f-4f13-b1ad-83c1a930ea1f": {
+        "position": {
+          "x": 156.8,
+          "y": 39.2
+        }
+      },
+      "1da0125d-3859-40c3-99b7-d77929f3e29f": {
+        "position": {
+          "x": 418.40000000000003,
+          "y": 940
+        },
+        "dynamicParams": []
+      },
+      "fe1d19ba-df48-4550-af41-1fc0b47a7f5c": {
+        "position": {
+          "x": 416.8,
+          "y": 764
+        },
+        "dynamicParams": []
+      },
+      "98482e2b-355e-4f06-ba26-1f1d8d3c34f4": {
+        "position": {
+          "x": 430.40000000000003,
+          "y": 218.4
+        },
+        "dynamicParams": []
+      },
+      "7ce2b89c-8a5e-441f-9abf-4feb806456cb": {
+        "position": {
+          "x": 430.40000000000003,
+          "y": 400
+        },
+        "dynamicParams": []
+      },
+      "0f8317d8-624a-4fad-ab66-659a0f404c86": {
+        "position": {
+          "x": 428,
+          "y": 27.200000000000003
+        },
+        "dynamicParams": []
+      },
+      "733bd469-745d-495d-945a-f517598aabe4": {
+        "position": {
+          "x": 160.8,
+          "y": 240.8
+        }
+      },
+      "495d1584-ea48-4d67-8605-012e01c2a5cf": {
+        "position": {
+          "x": 430.40000000000003,
+          "y": 584.8000000000001
+        },
+        "dynamicParams": []
+      },
+      "f63c43b9-dd1b-4483-8e2e-a6039505e16b": {
+        "position": {
+          "x": 997.6,
+          "y": 5.6000000000000005
+        }
+      },
+      "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91": {
+        "position": {
+          "x": 743.2,
+          "y": 128.8
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Detail"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "Sections": {
+              "useJson": true
+            },
+            "AttributeBar": {
+              "useJson": true
+            },
+            "Actions": {
+              "useJson": true
+            }
+          }
+        }
+      }
+    },
+    "name": "SBSGuides_Module_VoiceIDView",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "49c01c33-762f-4f13-b1ad-83c1a930ea1f",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "733bd469-745d-495d-945a-f517598aabe4"
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "CheckVoiceIdResult": "Error"
+        }
+      },
+      "Identifier": "1da0125d-3859-40c3-99b7-d77929f3e29f",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+        "Errors": [
+          {
+            "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "CheckVoiceIdResult": "Opted out"
+        }
+      },
+      "Identifier": "fe1d19ba-df48-4550-af41-1fc0b47a7f5c",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+        "Errors": [
+          {
+            "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "CheckVoiceIdResult": "Not authenticated"
+        }
+      },
+      "Identifier": "98482e2b-355e-4f06-ba26-1f1d8d3c34f4",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+        "Errors": [
+          {
+            "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "CheckVoiceIdResult": "Inconclusive"
+        }
+      },
+      "Identifier": "7ce2b89c-8a5e-441f-9abf-4feb806456cb",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+        "Errors": [
+          {
+            "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "CheckVoiceIdResult": "Authenticated"
+        }
+      },
+      "Identifier": "0f8317d8-624a-4fad-ab66-659a0f404c86",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+        "Errors": [
+          {
+            "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "CheckVoiceIdOption": "voiceAuthentication"
+      },
+      "Identifier": "733bd469-745d-495d-945a-f517598aabe4",
+      "Type": "CheckVoiceId",
+      "Transitions": {
+        "NextAction": "1da0125d-3859-40c3-99b7-d77929f3e29f",
+        "Conditions": [
+          {
+            "NextAction": "0f8317d8-624a-4fad-ab66-659a0f404c86",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Authenticated"
+              ]
+            }
+          },
+          {
+            "NextAction": "98482e2b-355e-4f06-ba26-1f1d8d3c34f4",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "NotAuthenticated"
+              ]
+            }
+          },
+          {
+            "NextAction": "7ce2b89c-8a5e-441f-9abf-4feb806456cb",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Inconclusive"
+              ]
+            }
+          },
+          {
+            "NextAction": "495d1584-ea48-4d67-8605-012e01c2a5cf",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "NotEnrolled"
+              ]
+            }
+          },
+          {
+            "NextAction": "fe1d19ba-df48-4550-af41-1fc0b47a7f5c",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "OptedOut"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "1da0125d-3859-40c3-99b7-d77929f3e29f",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "CheckVoiceIdResult": "Not enrolled"
+        }
+      },
+      "Identifier": "495d1584-ea48-4d67-8605-012e01c2a5cf",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+        "Errors": [
+          {
+            "NextAction": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "f63c43b9-dd1b-4483-8e2e-a6039505e16b",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "detail",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Voice ID Information",
+          "Description": "This is the information for customer ID $.CustomerId",
+          "Sections": [
+            {
+              "Heading": "Caller Details",
+              "Items": [
+                {
+                  "Label": "Firstname",
+                  "Value": "Sample"
+                },
+                {
+                  "Label": "Lastname",
+                  "Value": "Caller"
+                },
+                {
+                  "Label": "Phone Number",
+                  "Value": "$.Attributes.CustomerPhoneNumber"
+                }
+              ]
+            },
+            {
+              "Heading": "Voice ID Results",
+              "Items": [
+                {
+                  "Label": "Voice ID Status",
+                  "Value": "$.Attributes.CheckVoiceIdResult"
+                }
+              ]
+            }
+          ],
+          "AttributeBar": [
+            {
+              "Label": "Full Name",
+              "Value": "Sample Caller"
+            },
+            {
+              "Label": "Customer ID",
+              "Value": "$.CustomerId"
+            },
+            {
+              "Label": "Queue",
+              "Value": "$.Queue.Name"
+            }
+          ],
+          "Actions": [
+            "Refresh View"
+          ]
+        }
+      },
+      "Identifier": "802ea1d3-18a8-49f1-9b11-1de7dd0f7d91",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "f63c43b9-dd1b-4483-8e2e-a6039505e16b",
+        "Conditions": [
+          {
+            "NextAction": "733bd469-745d-495d-945a-f517598aabe4",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "ActionSelected"
+              ]
+            }
+          },
+          {
+            "NextAction": "733bd469-745d-495d-945a-f517598aabe4",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "f63c43b9-dd1b-4483-8e2e-a6039505e16b",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "f63c43b9-dd1b-4483-8e2e-a6039505e16b",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "f63c43b9-dd1b-4483-8e2e-a6039505e16b",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    }
+  ]
+}
