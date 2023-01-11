@@ -1,0 +1,120 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "b2c55f7d-2c23-4273-816a-cf435f1eb52d",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "3c333159-9fcb-4766-89cf-928dec499c61": {
+        "position": {
+          "x": 645.6,
+          "y": 27.200000000000003
+        }
+      },
+      "2e69c35b-f4cb-40ff-b536-a8abc7b25c44": {
+        "position": {
+          "x": 895.2,
+          "y": 230.4
+        }
+      },
+      "b0dd877c-7fbb-4dcf-a12f-b8af02921c90": {
+        "position": {
+          "x": 394.40000000000003,
+          "y": 30.400000000000002
+        },
+        "parameters": {
+          "QueueId": {
+            "useDynamic": true
+          }
+        },
+        "useDynamic": true
+      },
+      "b2c55f7d-2c23-4273-816a-cf435f1eb52d": {
+        "position": {
+          "x": 157.60000000000002,
+          "y": 22.400000000000002
+        },
+        "parameters": {
+          "Attributes": {
+            "CustomerPhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "CustomerPhoneNumber"
+        ]
+      }
+    },
+    "name": "HandlerFlowForDispositionCodesExample",
+    "description": "",
+    "type": "contactFlow",
+    "status": "saved",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {},
+      "Identifier": "3c333159-9fcb-4766-89cf-928dec499c61",
+      "Type": "TransferContactToQueue",
+      "Transitions": {
+        "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+        "Errors": [
+          {
+            "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+            "ErrorType": "QueueAtCapacity"
+          },
+          {
+            "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "QueueId": "$.Attributes.WorkingQueue"
+      },
+      "Identifier": "b0dd877c-7fbb-4dcf-a12f-b8af02921c90",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "3c333159-9fcb-4766-89cf-928dec499c61",
+        "Errors": [
+          {
+            "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "DefaultFlowForAgentUI": "**Enter a Views contact flow ID**",
+          "DisconnectFlowForAgentUI": "**Enter a Views contact flow ID**",
+          "CustomerPhoneNumber": "$.CustomerEndpoint.Address",
+          "WorkingQueue": "**Enter a valid queue ARN in your Connect Instance**"
+        }
+      },
+      "Identifier": "b2c55f7d-2c23-4273-816a-cf435f1eb52d",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "b0dd877c-7fbb-4dcf-a12f-b8af02921c90",
+        "Errors": [
+          {
+            "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}
