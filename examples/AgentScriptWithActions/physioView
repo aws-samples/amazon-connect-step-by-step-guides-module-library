@@ -1,0 +1,1089 @@
+{
+    "Version": "2019-10-30",
+    "StartAction": "9118e2fb-c62f-4c29-9eff-e93da91cac29",
+    "Metadata": {
+        "entryPointPosition": {
+            "x": 40,
+            "y": 40
+        },
+        "ActionMetadata": {
+            "9118e2fb-c62f-4c29-9eff-e93da91cac29": {
+                "position": {
+                    "x": 193.60000000000002,
+                    "y": 21.6
+                }
+            },
+            "35f6935a-b3f2-4b29-90f2-6cd2998da07b": {
+                "position": {
+                    "x": -103.2,
+                    "y": 214.4
+                },
+                "useDynamic": {},
+                "customerProfilesAction": "GetCustomerProfile"
+            },
+            "09e52458-e5f0-44e2-b792-f91357219202": {
+                "position": {
+                    "x": -104,
+                    "y": 501.6
+                },
+                "useDynamic": {},
+                "customerProfilesAction": "CreateCustomerProfile"
+            },
+            "5f4defb7-fb65-480e-8d78-28fab9ec1989": {
+                "position": {
+                    "x": 1503.2,
+                    "y": 634.4000000000001
+                },
+                "dynamicParams": []
+            },
+            "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7": {
+                "position": {
+                    "x": 534.4,
+                    "y": 56.800000000000004
+                },
+                "parameters": {
+                    "ViewResource": {
+                        "Id": {
+                            "displayName": "Cards"
+                        }
+                    },
+                    "InvocationTimeLimitSeconds": {
+                        "unit": 60
+                    },
+                    "ViewData": {
+                        "AttributeBar": {
+                            "useJson": true
+                        },
+                        "Back": {
+                            "useJson": true
+                        },
+                        "NoMatchFound": {
+                            "useJson": true
+                        },
+                        "Cards": {
+                            "useJson": true
+                        }
+                    }
+                }
+            },
+            "fbb706b1-674c-422c-9859-b78dff7de155": {
+                "position": {
+                    "x": 1866.4,
+                    "y": 1076.8
+                },
+                "parameters": {
+                    "ViewResource": {
+                        "Id": {
+                            "displayName": "Confirmation"
+                        }
+                    },
+                    "InvocationTimeLimitSeconds": {
+                        "unit": 1
+                    },
+                    "ViewData": {
+                        "AttributeBar": {
+                            "useJson": true
+                        }
+                    }
+                }
+            },
+            "11e0ea4b-5502-4849-b966-b0dc6d6ad789": {
+                "position": {
+                    "x": 2172,
+                    "y": 1388.8000000000002
+                }
+            },
+            "032fdba4-bfbd-44b0-9cc4-137dbe7716cd": {
+                "position": {
+                    "x": 198.4,
+                    "y": 638.4000000000001
+                },
+                "dynamicParams": []
+            },
+            "61f4731f-eabe-4d1d-835c-a35956299244": {
+                "position": {
+                    "x": 443.20000000000005,
+                    "y": 868
+                }
+            },
+            "dde23aa2-75f5-4d02-b08c-14f44fa43b4d": {
+                "position": {
+                    "x": 830.4000000000001,
+                    "y": 274.40000000000003
+                },
+                "dynamicParams": []
+            },
+            "2c383a61-44af-4cac-90e3-e68383c807e5": {
+                "position": {
+                    "x": 1076.8,
+                    "y": 508
+                },
+                "parameters": {
+                    "ViewResource": {
+                        "Id": {
+                            "displayName": "Form"
+                        }
+                    },
+                    "InvocationTimeLimitSeconds": {
+                        "unit": 60
+                    },
+                    "ViewData": {
+                        "AttributeBar": {
+                            "useJson": true
+                        },
+                        "Sections": {
+                            "useJson": true
+                        },
+                        "Cancel": {
+                            "useJson": true
+                        },
+                        "Next": {
+                            "useJson": true
+                        },
+                        "Back": {
+                            "useJson": true
+                        }
+                    }
+                }
+            },
+            "31aa4fee-6480-495e-b003-bbf5b4ab1cea": {
+                "position": {
+                    "x": 1730.4,
+                    "y": 190.4
+                }
+            },
+            "ec289ffe-a6bd-4e78-80fe-d32168bb60be": {
+                "position": {
+                    "x": 1087.2,
+                    "y": 248.8
+                },
+                "conditionMetadata": [
+                    {
+                        "id": "f0aaf9ab-0f73-4fd4-a5c7-7623fa1769ad",
+                        "operator": {
+                            "name": "Equals",
+                            "value": "Equals",
+                            "shortDisplay": "="
+                        },
+                        "value": "Urgent Cancellation"
+                    },
+                    {
+                        "id": "4f6b61e4-ef81-494a-9375-c69d87717123",
+                        "operator": {
+                            "name": "Equals",
+                            "value": "Equals",
+                            "shortDisplay": "="
+                        },
+                        "value": "Standard Cancellation"
+                    }
+                ]
+            },
+            "58c1a435-ead8-49eb-b38e-35a05640952d": {
+                "position": {
+                    "x": 1535.2,
+                    "y": 1033.6000000000001
+                },
+                "parameters": {
+                    "LambdaFunctionARN": {
+                        "displayName": "ses-sendEmail"
+                    }
+                },
+                "dynamicMetadata": {
+                    "destination": false,
+                    "subject": false,
+                    "body": false
+                }
+            },
+            "1d7356ff-54b4-4293-9204-b19c2b39c7e4": {
+                "position": {
+                    "x": 1610.4,
+                    "y": 1329.6000000000001
+                },
+                "parameters": {
+                    "ViewResource": {
+                        "Id": {
+                            "displayName": "Confirmation"
+                        }
+                    },
+                    "InvocationTimeLimitSeconds": {
+                        "unit": 1
+                    },
+                    "ViewData": {
+                        "AttributeBar": {
+                            "useJson": true
+                        }
+                    }
+                }
+            },
+            "4fa90417-1f3a-4606-a898-0f1c074be5bf": {
+                "position": {
+                    "x": 972,
+                    "y": 1016.8000000000001
+                },
+                "conditionMetadata": [
+                    {
+                        "id": "ab4ffec7-4329-4cb2-abf4-57f740c19163",
+                        "operator": {
+                            "name": "Equals",
+                            "value": "Equals",
+                            "shortDisplay": "="
+                        },
+                        "value": "Urgent Cancellation"
+                    },
+                    {
+                        "id": "52822cf6-0036-4fb6-ab09-3dd3866c5ac0",
+                        "operator": {
+                            "name": "Equals",
+                            "value": "Equals",
+                            "shortDisplay": "="
+                        },
+                        "value": "Standard Cancellation"
+                    }
+                ]
+            },
+            "3120fc9e-79ba-4509-b037-9a4367d7103f": {
+                "position": {
+                    "x": 1262.4,
+                    "y": 855.2
+                },
+                "parameters": {
+                    "LambdaFunctionARN": {
+                        "displayName": "connect_sendSMSNotification"
+                    }
+                },
+                "dynamicMetadata": {
+                    "destination": false,
+                    "message": false
+                }
+            }
+        },
+        "name": "physioView",
+        "description": "",
+        "type": "contactFlow",
+        "status": "published",
+        "hash": {}
+    },
+    "Actions": [
+        {
+            "Parameters": {
+                "FlowLoggingBehavior": "Enabled"
+            },
+            "Identifier": "9118e2fb-c62f-4c29-9eff-e93da91cac29",
+            "Type": "UpdateFlowLoggingBehavior",
+            "Transitions": {
+                "NextAction": "35f6935a-b3f2-4b29-90f2-6cd2998da07b"
+            }
+        },
+        {
+            "Parameters": {
+                "ProfileRequestData": {
+                    "PhoneNumber": "$.Attributes.CustomerPhoneNumber"
+                },
+                "ProfileResponseData": [
+                    "FirstName",
+                    "LastName",
+                    "PhoneNumber",
+                    "EmailAddress",
+                    "Address1",
+                    "City",
+                    "Country",
+                    "PostalCode",
+                    "State"
+                ]
+            },
+            "Identifier": "35f6935a-b3f2-4b29-90f2-6cd2998da07b",
+            "Type": "GetCustomerProfile",
+            "Transitions": {
+                "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+                "Errors": [
+                    {
+                        "NextAction": "09e52458-e5f0-44e2-b792-f91357219202",
+                        "ErrorType": "NoMatchingError"
+                    },
+                    {
+                        "NextAction": "09e52458-e5f0-44e2-b792-f91357219202",
+                        "ErrorType": "MultipleFoundError"
+                    },
+                    {
+                        "NextAction": "09e52458-e5f0-44e2-b792-f91357219202",
+                        "ErrorType": "NoneFoundError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "ProfileRequestData": {
+                    "FirstName": "Sample",
+                    "LastName": "Customer",
+                    "PhoneNumber": "+11111111111"
+                },
+                "ProfileResponseData": [
+                    "FirstName",
+                    "LastName",
+                    "PhoneNumber"
+                ]
+            },
+            "Identifier": "09e52458-e5f0-44e2-b792-f91357219202",
+            "Type": "CreateCustomerProfile",
+            "Transitions": {
+                "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+                "Errors": [
+                    {
+                        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "Attributes": {
+                    "physio": "$.Views.ViewResultData.ActionOutput.formData.physio.0"
+                }
+            },
+            "Identifier": "5f4defb7-fb65-480e-8d78-28fab9ec1989",
+            "Type": "UpdateContactAttributes",
+            "Transitions": {
+                "NextAction": "4fa90417-1f3a-4606-a898-0f1c074be5bf",
+                "Errors": [
+                    {
+                        "NextAction": "4fa90417-1f3a-4606-a898-0f1c074be5bf",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "ViewResource": {
+                    "Id": "cards",
+                    "Version": "Latest"
+                },
+                "InvocationTimeLimitSeconds": "18000",
+                "ViewData": {
+                    "Heading": "\"Objective: Book an appointment in the calendar\"",
+                    "AttributeBar": [
+                        {
+                            "Label": "Call",
+                            "Value": "$.Attributes.callType"
+                        },
+                        {
+                            "Label": "Link",
+                            "Value": "External System",
+                            "LinkType": "external",
+                            "Url": "<URL to external link>"
+                        }
+                    ],
+                    "Back": {
+                        "Label": "Back"
+                    },
+                    "NoMatchFound": {
+                        "Label": "Can't find match?"
+                    },
+                    "Cards": [
+                        {
+                            "Summary": {
+                                "Id": "procedure",
+                                "Icon": "Book Open",
+                                "Heading": "Procedure"
+                            },
+                            "Detail": {
+                                "Heading": "Procedure",
+                                "Sections": [
+                                    {
+                                        "TemplateString": "<TextContent>There are 3 sites:<ul><li>Jenny Watts Physio: 59 Upper Wainui Road, RD3, Raglan (Jenny mainly works out of here)</li><li>Raglan medical: Jenny Watts Physio at Raglan Medical, 9 Wallis Stree, Raglan (Otto is based here, Jenny will do some Fridays)</li><li>Seed Pilates: 213 Te Ahiawa Road, Raglan (Carol - priority for new patients)</li></ul></TextContent>"
+                                    },
+                                    {
+                                        "TemplateString": "<TextContent>Note: Jenny is trialing a massage therapist (Penny Hill) who is working form the Raglan Medical. $160 for 60mins and $240 for 90min.</TextContent>"
+                                    },
+                                    {
+                                        "TemplateString": "<TextContent>ACC Patients do not need to contact ACC before making the appointment we can help them will all the paperwork.</TextContent>"
+                                    },
+                                    {
+                                        "TemplateString": "<TextContent>Find appropriate booking time on calendar. <ul><li>New patients: Book with Otto (Select Jenny watts Physio – Raglan Medical) / Jenny will take on new patients if requested.</li><li>Bookings For Jenny: can be booked at Jenny Watts Physio or at the Raglan Medical on Fridays – ensure you inform the caller of the address.</li><li>Bookings for Kate: Select Whole Health </li></ul></TextContent>"
+                                    },
+                                    {
+                                        "TemplateString": "<TextContent>Appointments with Kate: 45 minutes for all bookings.</TextContent>"
+                                    },
+                                    {
+                                        "TemplateString": "<TextContent>Appointments with Otto or Jenny can be booked for 30 minutes.</TextContent>"
+                                    },
+                                    {
+                                        "TemplateString": "<TextContent>Always confirm the address of the site you have booked the patient at Raglan Medical site is a new site so need to ensure address is given on every call.</TextContent>"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Summary": {
+                                "Id": "cancellations",
+                                "Icon": "Pencil Holder",
+                                "Heading": "Cancellations"
+                            },
+                            "Detail": {
+                                "Heading": "Cancellations",
+                                "Sections": [
+                                    {
+                                        "TemplateString": "<TextContent>Last minute (less than 1 hour before appointement): select \"Urgent Cancellation\" and fill in the form to alert the physio by SMS and email.</TextContent>"
+                                    },
+                                    {
+                                        "TemplateString": "<TextContent>If not last minute: select \"Standard Cancellation\" and fill in the form to alert the physio by email.</TextContent>"
+                                    }
+                                ],
+                                "Actions": [
+                                    "Urgent Cancellation",
+                                    "Standard Cancellation"
+                                ]
+                            }
+                        },
+                        {
+                            "Summary": {
+                                "Id": "other_messages",
+                                "Icon": "Chat",
+                                "Heading": "Other Messages"
+                            },
+                            "Detail": {
+                                "Heading": "Any Other Messages",
+                                "Sections": [
+                                    {
+                                        "TemplateString": "<TextContent>Urgent:<ul><li>Create task \"Urgent Message\" with customers details and message, and assign to physio.</li></ul></TextContent>"
+                                    },
+                                    {
+                                        "TemplateString": "<TextContent>Non-urgent: <ul><li>Create task \"Message\" with customers details and message, and assign to physio.</li></ul></TextContent>"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Summary": {
+                                "Id": "charges",
+                                "Icon": "Cash",
+                                "Heading": "Charges / Prices"
+                            },
+                            "Detail": {
+                                "Heading": "Charges and Prices",
+                                "Sections": {
+                                    "TemplateString": "<ul><li>ACC Visit: $20</li><li>Under 18 ACC Visit: $15</li><li>Private 30 mins: $50</li><li>Private 45 mins: $65</li><li>Private 60 mins: $80</li><li>Supervised gym visit ACC: $30</li><li>Home visit ACC: $30</li></ul>"
+                                }
+                            }
+                        },
+                        {
+                            "Summary": {
+                                "Id": "payments",
+                                "Icon": "Wallet Closed",
+                                "Heading": "Payments"
+                            },
+                            "Detail": {
+                                "Heading": "Payments",
+                                "Sections": {
+                                    "TemplateString": "<TextContent>Payments can be made by:<ul><li>Cash and online banking transfer at 59 Upper Wainui Road, RD3, Raglan</li><li>Eftpos and online bank transfer at Ragland medical Site 9 Wallis Street, Raglan</li></ul></TextContent>"
+                                }
+                            }
+                        },
+                        {
+                            "Summary": {
+                                "Id": "address",
+                                "Icon": "House",
+                                "Heading": "Address"
+                            },
+                            "Detail": {
+                                "Heading": "Address",
+                                "Sections": [
+                                    {
+                                        "TemplateString": "<p>Jenny Watts Physio - 59 Upper Wainui Road, RD3, Raglan</p><p>Jenny Watts Physio (Raglan Medical) - 9 Wallis Street, Raglan</p>"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "Identifier": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+            "Type": "ShowView",
+            "Transitions": {
+                "NextAction": "31aa4fee-6480-495e-b003-bbf5b4ab1cea",
+                "Errors": [
+                    {
+                        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+                        "ErrorType": "NoMatchingCondition"
+                    },
+                    {
+                        "NextAction": "31aa4fee-6480-495e-b003-bbf5b4ab1cea",
+                        "ErrorType": "NoMatchingError"
+                    },
+                    {
+                        "NextAction": "31aa4fee-6480-495e-b003-bbf5b4ab1cea",
+                        "ErrorType": "TimeLimitExceeded"
+                    }
+                ],
+                "Conditions": [
+                    {
+                        "NextAction": "dde23aa2-75f5-4d02-b08c-14f44fa43b4d",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "ActionSelected"
+                            ]
+                        }
+                    },
+                    {
+                        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "Back"
+                            ]
+                        }
+                    },
+                    {
+                        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "NoMatchFound"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "ViewResource": {
+                    "Id": "confirmation",
+                    "Version": "Latest"
+                },
+                "InvocationTimeLimitSeconds": "300",
+                "ViewData": {
+                    "Heading": "\"Message sent to $.Attributes.physio !\"",
+                    "AttributeBar": [
+                        {
+                            "Label": "Call",
+                            "Value": "$.Attributes.callType"
+                        },
+                        {
+                            "Label": "Link",
+                            "Value": "External System",
+                            "LinkType": "external",
+                            "Url": "<URL to external link>"
+                        }
+                    ],
+                    "Graphic": "{\"Include\": true}",
+                    "Next": "{\"Label\":\"Close this workflow\"}",
+                    "SubHeading": "You can now close this workflow."
+                }
+            },
+            "Identifier": "fbb706b1-674c-422c-9859-b78dff7de155",
+            "Type": "ShowView",
+            "Transitions": {
+                "NextAction": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+                "Errors": [
+                    {
+                        "NextAction": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+                        "ErrorType": "NoMatchingCondition"
+                    },
+                    {
+                        "NextAction": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+                        "ErrorType": "NoMatchingError"
+                    },
+                    {
+                        "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+                        "ErrorType": "TimeLimitExceeded"
+                    }
+                ],
+                "Conditions": [
+                    {
+                        "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "Next"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {},
+            "Identifier": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+            "Type": "DisconnectParticipant",
+            "Transitions": {}
+        },
+        {
+            "Parameters": {
+                "Attributes": {
+                    "CustomerFullName": "$.Customer.FirstName $.Customer.LastName",
+                    "callType": "Physio Call"
+                }
+            },
+            "Identifier": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+            "Type": "UpdateContactAttributes",
+            "Transitions": {
+                "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+                "Errors": [
+                    {
+                        "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {},
+            "Identifier": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "Type": "DisconnectParticipant",
+            "Transitions": {}
+        },
+        {
+            "Parameters": {
+                "Attributes": {
+                    "actionName": "$.Views.ViewResultData.actionName"
+                }
+            },
+            "Identifier": "dde23aa2-75f5-4d02-b08c-14f44fa43b4d",
+            "Type": "UpdateContactAttributes",
+            "Transitions": {
+                "NextAction": "ec289ffe-a6bd-4e78-80fe-d32168bb60be",
+                "Errors": [
+                    {
+                        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "ViewResource": {
+                    "Id": "form",
+                    "Version": "Latest"
+                },
+                "InvocationTimeLimitSeconds": "18000",
+                "ViewData": {
+                    "Heading": "\"$.Attributes.actionName\"",
+                    "AttributeBar": [
+                        {
+                            "Label": "Call",
+                            "Value": "$.Attributes.callType"
+                        },
+                        {
+                            "Label": "Link",
+                            "Value": "External System",
+                            "LinkType": "external",
+                            "Url": "<URL to external link>"
+                        }
+                    ],
+                    "Sections": [
+                        {
+                            "_id": "customerInformation",
+                            "Type": "FormSection",
+                            "Heading": "Customer details",
+                            "Items": [
+                                {
+                                    "LayoutConfiguration": {
+                                        "Grid": [
+                                            {
+                                                "colspan": {
+                                                    "default": "6",
+                                                    "xs": "6"
+                                                }
+                                            },
+                                            {
+                                                "colspan": {
+                                                    "default": "6",
+                                                    "xs": "6"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "Items": [
+                                        {
+                                            "Type": "FormInput",
+                                            "Fluid": true,
+                                            "InputType": "text",
+                                            "Label": "First Name",
+                                            "Name": "firstName",
+                                            "DefaultValue": "$.Customer.FirstName"
+                                        },
+                                        {
+                                            "Type": "FormInput",
+                                            "Fluid": true,
+                                            "InputType": "text",
+                                            "Label": "Last Name",
+                                            "Name": "lastName",
+                                            "DefaultValue": "$.Customer.LastName"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "LayoutConfiguration": {
+                                        "Grid": [
+                                            {
+                                                "colspan": {
+                                                    "default": "4",
+                                                    "xs": "4"
+                                                }
+                                            },
+                                            {
+                                                "colspan": {
+                                                    "default": "8",
+                                                    "xs": "8"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "Items": [
+                                        {
+                                            "Type": "FormInput",
+                                            "Fluid": true,
+                                            "InputType": "text",
+                                            "Label": "Phone Number",
+                                            "Name": "phoneNumber",
+                                            "DefaultValue": "$.Attributes.CustomerPhoneNumber"
+                                        },
+                                        {
+                                            "Type": "FormInput",
+                                            "Fluid": true,
+                                            "InputType": "text",
+                                            "Label": "Email Address",
+                                            "Name": "email",
+                                            "DefaultValue": "$.Customer.EmailAddress"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "_id": "messageDetails",
+                            "Type": "FormSection",
+                            "Heading": "Message details",
+                            "Items": [
+                                {
+                                    "LayoutConfiguration": {
+                                        "Grid": [
+                                            {
+                                                "colspan": {
+                                                    "default": "6",
+                                                    "xs": "4"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "Items": [
+                                        {
+                                            "Type": "Dropdown",
+                                            "Fluid": true,
+                                            "Label": "Physiotherapist",
+                                            "Name": "physio",
+                                            "DefaultValue": [
+                                                "Jenny"
+                                            ],
+                                            "Options": [
+                                                {
+                                                    "Label": "Jenny",
+                                                    "Value": "Jenny"
+                                                },
+                                                {
+                                                    "Label": "Otto",
+                                                    "Value": "Otto"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "LayoutConfiguration": {
+                                        "Grid": [
+                                            {
+                                                "colspan": {
+                                                    "default": "6",
+                                                    "xs": "4"
+                                                }
+                                            },
+                                            {
+                                                "colspan": {
+                                                    "default": "6",
+                                                    "xs": "4"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "Items": [
+                                        {
+                                            "Type": "DatePicker",
+                                            "Label": "Appointment Date",
+                                            "Name": "date",
+                                            "DefaultValue": "2022-10-15",
+                                            "Fluid": true
+                                        },
+                                        {
+                                            "Type": "TimeInput",
+                                            "Label": "Appointment Time",
+                                            "Name": "time",
+                                            "DefaultValue": "12:00",
+                                            "Fluid": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "LayoutConfiguration": {
+                                        "Grid": [
+                                            {
+                                                "colspan": {
+                                                    "default": "12",
+                                                    "xs": "12"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "Items": [
+                                        {
+                                            "Type": "TextArea",
+                                            "Fluid": true,
+                                            "Label": "Additional Details",
+                                            "Name": "details"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "Cancel": {
+                        "Label": "Cancel"
+                    },
+                    "Next": {
+                        "Label": "Submit"
+                    },
+                    "Back": {
+                        "Label": "Back"
+                    }
+                }
+            },
+            "Identifier": "2c383a61-44af-4cac-90e3-e68383c807e5",
+            "Type": "ShowView",
+            "Transitions": {
+                "NextAction": "31aa4fee-6480-495e-b003-bbf5b4ab1cea",
+                "Errors": [
+                    {
+                        "NextAction": "31aa4fee-6480-495e-b003-bbf5b4ab1cea",
+                        "ErrorType": "NoMatchingCondition"
+                    },
+                    {
+                        "NextAction": "31aa4fee-6480-495e-b003-bbf5b4ab1cea",
+                        "ErrorType": "NoMatchingError"
+                    },
+                    {
+                        "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+                        "ErrorType": "TimeLimitExceeded"
+                    }
+                ],
+                "Conditions": [
+                    {
+                        "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "Back"
+                            ]
+                        }
+                    },
+                    {
+                        "NextAction": "5f4defb7-fb65-480e-8d78-28fab9ec1989",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "Next"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {},
+            "Identifier": "31aa4fee-6480-495e-b003-bbf5b4ab1cea",
+            "Type": "DisconnectParticipant",
+            "Transitions": {}
+        },
+        {
+            "Parameters": {
+                "ComparisonValue": "$.Attributes.actionName"
+            },
+            "Identifier": "ec289ffe-a6bd-4e78-80fe-d32168bb60be",
+            "Type": "Compare",
+            "Transitions": {
+                "NextAction": "31aa4fee-6480-495e-b003-bbf5b4ab1cea",
+                "Conditions": [
+                    {
+                        "NextAction": "2c383a61-44af-4cac-90e3-e68383c807e5",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "Urgent Cancellation"
+                            ]
+                        }
+                    },
+                    {
+                        "NextAction": "2c383a61-44af-4cac-90e3-e68383c807e5",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "Standard Cancellation"
+                            ]
+                        }
+                    }
+                ],
+                "Errors": [
+                    {
+                        "NextAction": "31aa4fee-6480-495e-b003-bbf5b4ab1cea",
+                        "ErrorType": "NoMatchingCondition"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "LambdaFunctionARN": "arn:aws:lambda:ap-southeast-2:111111:function:ses-sendEmail",
+                "InvocationTimeLimitSeconds": "3",
+                "LambdaInvocationAttributes": {
+                    "destination": "xxxx",
+                    "subject": "Cancellation - $.Views.ViewResultData.ActionOutput.formData.firstName $.Views.ViewResultData.ActionOutput.formData.lastName ($.Views.ViewResultData.ActionOutput.formData.date $.Views.ViewResultData.ActionOutput.formData.time)",
+                    "body": "$.Views.ViewResultData.ActionOutput.formData.firstName $.Views.ViewResultData.ActionOutput.formData.lastName have cancelled their appointment ($.Views.ViewResultData.ActionOutput.formData.date $.Views.ViewResultData.ActionOutput.formData.time) - $.Views.ViewResultData.ActionOutput.formData.details"
+                },
+                "ResponseValidation": {
+                    "ResponseType": "STRING_MAP"
+                }
+            },
+            "Identifier": "58c1a435-ead8-49eb-b38e-35a05640952d",
+            "Type": "InvokeLambdaFunction",
+            "Transitions": {
+                "NextAction": "fbb706b1-674c-422c-9859-b78dff7de155",
+                "Errors": [
+                    {
+                        "NextAction": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "ViewResource": {
+                    "Id": "confirmation",
+                    "Version": "Latest"
+                },
+                "InvocationTimeLimitSeconds": "300",
+                "ViewData": {
+                    "Heading": "\"Message sent to $.Attributes.physio !\"",
+                    "AttributeBar": [
+                        {
+                            "Label": "Call",
+                            "Value": "$.Attributes.callType"
+                        },
+                        {
+                            "Label": "Link",
+                            "Value": "External System",
+                            "LinkType": "external",
+                            "Url": "<URL to external link>"
+                        }
+                    ],
+                    "Graphic": "{\"Include\": true}",
+                    "Next": "{\"Label\":\"Close this workflow\"}",
+                    "SubHeading": "You can now close this workflow."
+                }
+            },
+            "Identifier": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+            "Type": "ShowView",
+            "Transitions": {
+                "NextAction": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+                "Errors": [
+                    {
+                        "NextAction": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+                        "ErrorType": "NoMatchingCondition"
+                    },
+                    {
+                        "NextAction": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+                        "ErrorType": "NoMatchingError"
+                    },
+                    {
+                        "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+                        "ErrorType": "TimeLimitExceeded"
+                    }
+                ],
+                "Conditions": [
+                    {
+                        "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "Next"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "ComparisonValue": "$.Attributes.actionName"
+            },
+            "Identifier": "4fa90417-1f3a-4606-a898-0f1c074be5bf",
+            "Type": "Compare",
+            "Transitions": {
+                "NextAction": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+                "Conditions": [
+                    {
+                        "NextAction": "3120fc9e-79ba-4509-b037-9a4367d7103f",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "Urgent Cancellation"
+                            ]
+                        }
+                    },
+                    {
+                        "NextAction": "58c1a435-ead8-49eb-b38e-35a05640952d",
+                        "Condition": {
+                            "Operator": "Equals",
+                            "Operands": [
+                                "Standard Cancellation"
+                            ]
+                        }
+                    }
+                ],
+                "Errors": [
+                    {
+                        "NextAction": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+                        "ErrorType": "NoMatchingCondition"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "LambdaFunctionARN": "arn:aws:lambda:ap-southeast-2:11111:function:connect_sendSMSNotification",
+                "InvocationTimeLimitSeconds": "3",
+                "LambdaInvocationAttributes": {
+                    "destination": "xxxx",
+                    "message": "$.Views.ViewResultData.ActionOutput.formData.firstName $.Views.ViewResultData.ActionOutput.formData.lastName have cancelled their appointment ($.Views.ViewResultData.ActionOutput.formData.date $.Views.ViewResultData.ActionOutput.formData.time) - $.Views.ViewResultData.ActionOutput.formData.details"
+                },
+                "ResponseValidation": {
+                    "ResponseType": "STRING_MAP"
+                }
+            },
+            "Identifier": "3120fc9e-79ba-4509-b037-9a4367d7103f",
+            "Type": "InvokeLambdaFunction",
+            "Transitions": {
+                "NextAction": "58c1a435-ead8-49eb-b38e-35a05640952d",
+                "Errors": [
+                    {
+                        "NextAction": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        }
+    ]
+}

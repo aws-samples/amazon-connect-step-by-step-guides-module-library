@@ -1,0 +1,126 @@
+{
+    "Version": "2019-10-30",
+    "StartAction": "c2e3d9f0-11b2-46b8-b1ef-dcfddd52c591",
+    "Metadata": {
+        "entryPointPosition": {
+            "x": -368,
+            "y": -166.4
+        },
+        "ActionMetadata": {
+            "c2e3d9f0-11b2-46b8-b1ef-dcfddd52c591": {
+                "position": {
+                    "x": -231.20000000000002,
+                    "y": -200
+                }
+            },
+            "c930b82b-4704-4540-bd8f-8e03edd1fec8": {
+                "position": {
+                    "x": -228,
+                    "y": -3.2
+                },
+                "dynamicParams": []
+            },
+            "f6c8ed4f-a863-4b23-ab3b-c5e3471b79c4": {
+                "position": {
+                    "x": 50.400000000000006,
+                    "y": 54.400000000000006
+                },
+                "parameters": {
+                    "QueueId": {
+                        "displayName": "BasicQueue"
+                    }
+                },
+                "queue": {
+                    "text": "BasicQueue"
+                }
+            },
+            "718d85a0-75cc-4a5f-afae-faaf5ad6da8b": {
+                "position": {
+                    "x": 316,
+                    "y": 56.800000000000004
+                }
+            },
+            "39e45359-e0d2-45fb-b681-66a3c0b53576": {
+                "position": {
+                    "x": 609.6,
+                    "y": 120
+                }
+            }
+        },
+        "name": "inboundContactFlow",
+        "description": "",
+        "type": "contactFlow",
+        "status": "saved",
+        "hash": {}
+    },
+    "Actions": [
+        {
+            "Parameters": {
+                "FlowLoggingBehavior": "Enabled"
+            },
+            "Identifier": "c2e3d9f0-11b2-46b8-b1ef-dcfddd52c591",
+            "Type": "UpdateFlowLoggingBehavior",
+            "Transitions": {
+                "NextAction": "c930b82b-4704-4540-bd8f-8e03edd1fec8"
+            }
+        },
+        {
+            "Parameters": {
+                "Attributes": {
+                    "DefaultFlowForAgentUI": "e2415a8e-8743-419b-abb2-cdd10fc78f82"
+                }
+            },
+            "Identifier": "c930b82b-4704-4540-bd8f-8e03edd1fec8",
+            "Type": "UpdateContactAttributes",
+            "Transitions": {
+                "NextAction": "f6c8ed4f-a863-4b23-ab3b-c5e3471b79c4",
+                "Errors": [
+                    {
+                        "NextAction": "f6c8ed4f-a863-4b23-ab3b-c5e3471b79c4",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "QueueId": "arn:aws:connect:ap-southeast-2:964328442121:instance/849175c9-d4eb-45ed-bbdc-ed1cb660e02b/queue/71569bb2-4126-4fd0-b68e-9af17b4975a4"
+            },
+            "Identifier": "f6c8ed4f-a863-4b23-ab3b-c5e3471b79c4",
+            "Type": "UpdateContactTargetQueue",
+            "Transitions": {
+                "NextAction": "718d85a0-75cc-4a5f-afae-faaf5ad6da8b",
+                "Errors": [
+                    {
+                        "NextAction": "718d85a0-75cc-4a5f-afae-faaf5ad6da8b",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {},
+            "Identifier": "718d85a0-75cc-4a5f-afae-faaf5ad6da8b",
+            "Type": "TransferContactToQueue",
+            "Transitions": {
+                "NextAction": "39e45359-e0d2-45fb-b681-66a3c0b53576",
+                "Errors": [
+                    {
+                        "NextAction": "39e45359-e0d2-45fb-b681-66a3c0b53576",
+                        "ErrorType": "QueueAtCapacity"
+                    },
+                    {
+                        "NextAction": "39e45359-e0d2-45fb-b681-66a3c0b53576",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {},
+            "Identifier": "39e45359-e0d2-45fb-b681-66a3c0b53576",
+            "Type": "DisconnectParticipant",
+            "Transitions": {}
+        }
+    ]
+}
