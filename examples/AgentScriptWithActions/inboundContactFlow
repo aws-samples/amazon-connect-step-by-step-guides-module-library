@@ -67,7 +67,8 @@
         {
             "Parameters": {
                 "Attributes": {
-                    "DefaultFlowForAgentUI": "e2415a8e-8743-419b-abb2-cdd10fc78f82"
+                    "DefaultFlowForAgentUI": "[ADD YOU CONTACT FLOW ID HERE]",
+                    "WorkingQueue": "[Enter a valid queue ARN in your Connect Instance]"
                 }
             },
             "Identifier": "c930b82b-4704-4540-bd8f-8e03edd1fec8",
@@ -84,7 +85,7 @@
         },
         {
             "Parameters": {
-                "QueueId": "arn:aws:connect:ap-southeast-2:964328442121:instance/849175c9-d4eb-45ed-bbdc-ed1cb660e02b/queue/71569bb2-4126-4fd0-b68e-9af17b4975a4"
+                "QueueId": "$.Attributes.WorkingQueue"
             },
             "Identifier": "f6c8ed4f-a863-4b23-ab3b-c5e3471b79c4",
             "Type": "UpdateContactTargetQueue",

@@ -1,35 +1,57 @@
-const AWS = require("aws-sdk");
-const mime = require("mimemessage");
+import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
-exports.handler = (event, context, callback) => {
+export const handler = async (event, context, callback) => {
 
-    let ses = new AWS.SES();
+    const sesClient = new SESClient();
+    
+    const dataFromForm = event.Details.Parameters.formData;
+    
+    console.log(dataFromForm);
 
-    var mailContent = mime.factory({ contentType: "multipart/mixed", body: [] });
-
-    mailContent.header("From", process.env.FROM);
-    mailContent.header("To", event.Details.Parameters.destination);
-    mailContent.header("Subject", event.Details.Parameters.subject);
-
-    var alternateEntity = mime.factory({
-        contentType: "multipart/alternate",
-        body: [],
-    });
-
-    var plainEntity = mime.factory({
-        body: event.Details.Parameters.body
-    });
-
-    alternateEntity.body.push(plainEntity);
-    mailContent.body.push(alternateEntity);
-
-    ses.sendRawEmail(
-        {
-            RawMessage: { Data: mailContent.toString() },
+    const messageBodyHTML = 
+        `<p>Patient: ${dataFromForm.firstName} ${dataFromForm.lastName}</p>
+        
+        <h4>Appointment Cancellation</h4>
+        <ul>
+          <li>Date: ${dataFromForm.date}</li>
+          <li>Time: ${dataFromForm.date}</li>
+          <li>Details: ${dataFromForm.details}</li>
+        </ul>`;
+        
+    const messageBody = `Patient ${dataFromForm.firstName} ${dataFromForm.lastName} have cancelled their appointment (${dataFromForm.date} - ${dataFromForm.time}) - ${dataFromForm.details}`;
+    
+    const sendEmailCommand = new SendEmailCommand({
+      Destination: { /* required */
+        ToAddresses: [
+          event.Details.Parameters.physioEmail,
+        ]
+      },
+      Message: { /* required */
+        Body: { /* required */
+          Html: {
+          Charset: "UTF-8",
+          Data: messageBodyHTML
+          },
+          Text: {
+          Charset: "UTF-8",
+          Data: messageBody
+          }
         },
-        (err, data) => {
-            if (err) console.log(err, err.stack); // an error occurred
-            else console.log(data); // successful response
+        Subject: {
+          Charset: 'UTF-8',
+          Data: 'Appointment cancellation'
         }
-    );
+        },
+      Source: event.Details.Parameters.systemEmail
+    });
+    
+    try {
+      return await sesClient.send(sendEmailCommand);
+      
+    } catch (e) {
+      
+      console.error("Failed to send email.");
+      console.log(e);
+      return e;
+    }
 };
