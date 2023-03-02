@@ -10,12 +10,12 @@
       "3330b4ab-4523-4659-b857-3d0f14fd16c2": {
         "position": {
           "x": 784,
-          "y": 382.40000000000003
+          "y": 382.4
         }
       },
       "509ff02e-2e98-47c4-857e-201506228c80": {
         "position": {
-          "x": 499.20000000000005,
+          "x": 499.2,
           "y": 20
         },
         "parameters": {
@@ -58,13 +58,13 @@
       "79208c86-1092-4f7f-9c39-cc9a1d361de9": {
         "position": {
           "x": 16.8,
-          "y": 235.20000000000002
+          "y": 235.2
         }
       },
       "e7b54b1d-829a-47f3-b01b-3a022e66a698": {
         "position": {
           "x": 252.8,
-          "y": 18.400000000000002
+          "y": 18.4
         },
         "parameters": {
           "ProfileRequestData": {
@@ -78,45 +78,6 @@
         },
         "customerProfilesAction": "GetCustomerProfile"
       },
-      "483bf7b2-4cc7-440a-811a-77efa10d47bf": {
-        "position": {
-          "x": 791.2,
-          "y": 32
-        }
-      },
-      "239fb344-545c-44f5-af40-67b3777aa8e9": {
-        "position": {
-          "x": 1512,
-          "y": 38.400000000000006
-        },
-        "dynamicParams": []
-      },
-      "1269a85d-7243-4c01-9f21-3a4cf44ae762": {
-        "position": {
-          "x": 1746.4,
-          "y": 34.4
-        },
-        "conditionMetadata": [
-          {
-            "id": "389133f5-721c-42cf-a5ba-a59ba7955bd4",
-            "operator": {
-              "name": "Equals",
-              "value": "Equals",
-              "shortDisplay": "="
-            },
-            "value": "Refresh View"
-          },
-          {
-            "id": "b04df608-29a4-4ea0-a616-443be3238ab0",
-            "operator": {
-              "name": "Equals",
-              "value": "Equals",
-              "shortDisplay": "="
-            },
-            "value": "File Insurance Claim"
-          }
-        ]
-      },
       "643c46bb-091d-47eb-8926-4300ad421bc3": {
         "position": {
           "x": 1019.2,
@@ -126,8 +87,8 @@
       },
       "a17f629b-2e21-4cf8-9cb1-0feb04fd8a12": {
         "position": {
-          "x": 1016.8000000000001,
-          "y": 576.8000000000001
+          "x": 1016.8,
+          "y": 576.8
         },
         "dynamicParams": []
       },
@@ -140,7 +101,7 @@
       },
       "ea975c88-6f12-4750-a5f6-d448c1bcf209": {
         "position": {
-          "x": 1018.4000000000001,
+          "x": 1018.4,
           "y": 218.4
         },
         "dynamicParams": []
@@ -156,6 +117,63 @@
         "position": {
           "x": 1258.4,
           "y": 819.2
+        }
+      },
+      "483bf7b2-4cc7-440a-811a-77efa10d47bf": {
+        "position": {
+          "x": 791.2,
+          "y": 32
+        }
+      },
+      "239fb344-545c-44f5-af40-67b3777aa8e9": {
+        "position": {
+          "x": 1512,
+          "y": 39.2
+        },
+        "dynamicParams": []
+      },
+      "8de5e830-60b0-44c3-8eaf-b1d5b0cbd7ba": {
+        "position": {
+          "x": 2758.4,
+          "y": 32.8
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Confirmation"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "AttributeBar": {
+              "useJson": true
+            },
+            "Next": {
+              "useJson": true
+            }
+          }
+        }
+      },
+      "4ae69bd0-d6dd-4cfb-a1b9-92aebdb6902f": {
+        "position": {
+          "x": 2508,
+          "y": 43.2
+        },
+        "parameters": {
+          "ContactFlowId": {
+            "displayName": "ENTER TASK QUEUE HERE"
+          }
+        },
+        "ContactFlow": {
+          "text": "ENTER TASK QUEUE HERE"
+        }
+      },
+      "a37c19d9-8ecc-4d52-ae06-b712e60e22be": {
+        "position": {
+          "x": 2660,
+          "y": 512
         }
       },
       "e424488d-7082-43b6-9862-ac72edac521a": {
@@ -185,72 +203,65 @@
           }
         }
       },
-      "8de5e830-60b0-44c3-8eaf-b1d5b0cbd7ba": {
+      "1269a85d-7243-4c01-9f21-3a4cf44ae762": {
         "position": {
-          "x": 2758.4,
-          "y": 32.800000000000004
+          "x": 1742.4,
+          "y": 12
         },
-        "parameters": {
-          "ViewResource": {
-            "Id": {
-              "displayName": "Confirmation"
-            }
-          },
-          "InvocationTimeLimitSeconds": {
-            "unit": 1
-          },
-          "ViewData": {
-            "AttributeBar": {
-              "useJson": true
+        "conditionMetadata": [
+          {
+            "id": "f6a5e0ef-f974-41a9-8c3a-c6f5d28ea08a",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
             },
-            "Next": {
-              "useJson": true
-            }
+            "value": "Refresh View"
+          },
+          {
+            "id": "589e8f2b-a1f4-460e-a194-4a7526162213",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "File Insurance Claim"
           }
-        }
+        ]
       },
-      "a37c19d9-8ecc-4d52-ae06-b712e60e22be": {
+      "45320f4b-7d24-4508-819a-9b1c2f1afc14": {
         "position": {
-          "x": 2660,
-          "y": 512
-        }
-      },
-      "4ae69bd0-d6dd-4cfb-a1b9-92aebdb6902f": {
-        "position": {
-          "x": 2507.2000000000003,
-          "y": 43.2
+          "x": 2252,
+          "y": 44.8
         },
         "parameters": {
-          "ContactFlowId": {
-            "displayName": ""
+          "LambdaFunctionARN": {
+            "displayName": "SELECT LAMBDA FUNCTION HERE"
           }
         },
-        "ContactFlow": {
-          "text": ""
+        "dynamicMetadata": {
+          "dataFromViews": false
         }
       },
       "2a580d50-1ed2-4780-a766-e389dc1d2512": {
         "position": {
-          "x": 1977.6000000000001,
-          "y": 35.2
+          "x": 1972,
+          "y": 37.6
         },
         "parameters": {
           "ViewResource": {
             "Id": {
-              "displayName": "Wizard"
+              "displayName": "Form View"
             }
           },
           "InvocationTimeLimitSeconds": {
             "unit": 1
           },
           "ViewData": {
-            "Steps": {
-              "useJson": true
-            },
-            "StepSection": {
-              "useJson": true
-            },
             "AttributeBar": {
+              "useJson": true
+            },
+            "Sections": {
               "useJson": true
             },
             "Cancel": {
@@ -267,18 +278,9 @@
             }
           }
         }
-      },
-      "45320f4b-7d24-4508-819a-9b1c2f1afc14": {
-        "position": {
-          "x": 2252,
-          "y": 44.800000000000004
-        },
-        "dynamicMetadata": {
-          "dataFromViews": false
-        }
       }
     },
-    "name": "AgentWorkspaceExample",
+    "name": "AgentWorkspaceExampleForGA",
     "description": "",
     "type": "contactFlow",
     "status": "published",
@@ -364,123 +366,6 @@
           {
             "NextAction": "3330b4ab-4523-4659-b857-3d0f14fd16c2",
             "ErrorType": "NoneFoundError"
-          }
-        ]
-      }
-    },
-    {
-      "Parameters": {
-        "CheckVoiceIdOption": "voiceAuthentication"
-      },
-      "Identifier": "483bf7b2-4cc7-440a-811a-77efa10d47bf",
-      "Type": "CheckVoiceId",
-      "Transitions": {
-        "NextAction": "3330b4ab-4523-4659-b857-3d0f14fd16c2",
-        "Conditions": [
-          {
-            "NextAction": "0e7fbf88-baa3-4a6a-af93-ef136b7cc2a2",
-            "Condition": {
-              "Operator": "Equals",
-              "Operands": [
-                "Authenticated"
-              ]
-            }
-          },
-          {
-            "NextAction": "ea975c88-6f12-4750-a5f6-d448c1bcf209",
-            "Condition": {
-              "Operator": "Equals",
-              "Operands": [
-                "NotAuthenticated"
-              ]
-            }
-          },
-          {
-            "NextAction": "382eeb51-453c-41d9-992f-3b02af7e1f29",
-            "Condition": {
-              "Operator": "Equals",
-              "Operands": [
-                "Inconclusive"
-              ]
-            }
-          },
-          {
-            "NextAction": "a17f629b-2e21-4cf8-9cb1-0feb04fd8a12",
-            "Condition": {
-              "Operator": "Equals",
-              "Operands": [
-                "NotEnrolled"
-              ]
-            }
-          },
-          {
-            "NextAction": "643c46bb-091d-47eb-8926-4300ad421bc3",
-            "Condition": {
-              "Operator": "Equals",
-              "Operands": [
-                "OptedOut"
-              ]
-            }
-          }
-        ],
-        "Errors": [
-          {
-            "NextAction": "3330b4ab-4523-4659-b857-3d0f14fd16c2",
-            "ErrorType": "NoMatchingError"
-          }
-        ]
-      }
-    },
-    {
-      "Parameters": {
-        "Attributes": {
-          "ActionName": "$.Views.ViewResultData.actionName"
-        }
-      },
-      "Identifier": "239fb344-545c-44f5-af40-67b3777aa8e9",
-      "Type": "UpdateContactAttributes",
-      "Transitions": {
-        "NextAction": "1269a85d-7243-4c01-9f21-3a4cf44ae762",
-        "Errors": [
-          {
-            "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
-            "ErrorType": "NoMatchingError"
-          }
-        ]
-      }
-    },
-    {
-      "Parameters": {
-        "ComparisonValue": "$.Attributes.ActionName"
-      },
-      "Identifier": "1269a85d-7243-4c01-9f21-3a4cf44ae762",
-      "Type": "Compare",
-      "Transitions": {
-        "NextAction": "e424488d-7082-43b6-9862-ac72edac521a",
-        "Conditions": [
-          {
-            "NextAction": "483bf7b2-4cc7-440a-811a-77efa10d47bf",
-            "Condition": {
-              "Operator": "Equals",
-              "Operands": [
-                "Refresh View"
-              ]
-            }
-          },
-          {
-            "NextAction": "2a580d50-1ed2-4780-a766-e389dc1d2512",
-            "Condition": {
-              "Operator": "Equals",
-              "Operands": [
-                "File Insurance Claim"
-              ]
-            }
-          }
-        ],
-        "Errors": [
-          {
-            "NextAction": "e424488d-7082-43b6-9862-ac72edac521a",
-            "ErrorType": "NoMatchingCondition"
           }
         ]
       }
@@ -578,6 +463,180 @@
     {
       "Parameters": {},
       "Identifier": "e5c60821-d3e6-4ee8-bff8-e09239b69eab",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "CheckVoiceIdOption": "voiceAuthentication"
+      },
+      "Identifier": "483bf7b2-4cc7-440a-811a-77efa10d47bf",
+      "Type": "CheckVoiceId",
+      "Transitions": {
+        "NextAction": "3330b4ab-4523-4659-b857-3d0f14fd16c2",
+        "Conditions": [
+          {
+            "NextAction": "0e7fbf88-baa3-4a6a-af93-ef136b7cc2a2",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Authenticated"
+              ]
+            }
+          },
+          {
+            "NextAction": "ea975c88-6f12-4750-a5f6-d448c1bcf209",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "NotAuthenticated"
+              ]
+            }
+          },
+          {
+            "NextAction": "382eeb51-453c-41d9-992f-3b02af7e1f29",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Inconclusive"
+              ]
+            }
+          },
+          {
+            "NextAction": "a17f629b-2e21-4cf8-9cb1-0feb04fd8a12",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "NotEnrolled"
+              ]
+            }
+          },
+          {
+            "NextAction": "643c46bb-091d-47eb-8926-4300ad421bc3",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "OptedOut"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "3330b4ab-4523-4659-b857-3d0f14fd16c2",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "ActionName": "$.Views.ViewResultData.actionName"
+        }
+      },
+      "Identifier": "239fb344-545c-44f5-af40-67b3777aa8e9",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "1269a85d-7243-4c01-9f21-3a4cf44ae762",
+        "Errors": [
+          {
+            "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "confirmation",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Claim Submitted",
+          "AttributeBar": [
+            {
+              "Label": "Phone Number",
+              "Value": "$.Customer.PhoneNumber"
+            },
+            {
+              "Label": "Queue",
+              "Value": "$.Queue.Name"
+            },
+            {
+              "Label": "Voice ID Status",
+              "Value": "$.Attributes.VoiceIDStatus"
+            }
+          ],
+          "Next": {
+            "Label": "Close workflow"
+          },
+          "SubHeading": "Your claim has been submitted!"
+        }
+      },
+      "Identifier": "8de5e830-60b0-44c3-8eaf-b1d5b0cbd7ba",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
+        "Conditions": [
+          {
+            "NextAction": "e424488d-7082-43b6-9862-ac72edac521a",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Next"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Name": "New Insurance Claim",
+        "ContactFlowId": "arn:aws:connect:us-west-2:774622750279:instance/e756de95-af8c-4328-823c-9b402312a229/contact-flow/7bd5637b-01fd-4fe3-b1af-9a138606585f",
+        "Description": "Details of the new insurance claim",
+        "Attributes": {
+          "Expedited": "$.External.Expedited",
+          "LocationOfDamage": "$.External.LocationOfDamage",
+          "Incident": "$.External.Incident",
+          "OnPolicy": "$.External.OnPolicy",
+          "PolicyID": "$.External.PolicyID",
+          "Date": "$.External.Date",
+          "Location": "$.External.Location"
+        }
+      },
+      "Identifier": "4ae69bd0-d6dd-4cfb-a1b9-92aebdb6902f",
+      "Type": "CreateTask",
+      "Transitions": {
+        "NextAction": "8de5e830-60b0-44c3-8eaf-b1d5b0cbd7ba",
+        "Errors": [
+          {
+            "NextAction": "8de5e830-60b0-44c3-8eaf-b1d5b0cbd7ba",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
       "Type": "DisconnectParticipant",
       "Transitions": {}
     },
@@ -706,92 +765,58 @@
     },
     {
       "Parameters": {
-        "ViewResource": {
-          "Id": "confirmation",
-          "Version": "Latest"
-        },
-        "InvocationTimeLimitSeconds": "300",
-        "ViewData": {
-          "Heading": "Claim Submitted",
-          "AttributeBar": [
-            {
-              "Label": "Phone Number",
-              "Value": "$.Customer.PhoneNumber"
-            },
-            {
-              "Label": "Queue",
-              "Value": "$.Queue.Name"
-            },
-            {
-              "Label": "Voice ID Status",
-              "Value": "$.Attributes.VoiceIDStatus"
-            }
-          ],
-          "Next": {
-            "Label": "Close workflow"
-          },
-          "SubHeading": "Your claim has been submitted!"
-        }
+        "ComparisonValue": "$.Attributes.ActionName"
       },
-      "Identifier": "8de5e830-60b0-44c3-8eaf-b1d5b0cbd7ba",
-      "Type": "ShowView",
+      "Identifier": "1269a85d-7243-4c01-9f21-3a4cf44ae762",
+      "Type": "Compare",
       "Transitions": {
-        "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
+        "NextAction": "e424488d-7082-43b6-9862-ac72edac521a",
         "Conditions": [
           {
-            "NextAction": "e424488d-7082-43b6-9862-ac72edac521a",
+            "NextAction": "483bf7b2-4cc7-440a-811a-77efa10d47bf",
             "Condition": {
               "Operator": "Equals",
               "Operands": [
-                "Next"
+                "Refresh View"
+              ]
+            }
+          },
+          {
+            "NextAction": "2a580d50-1ed2-4780-a766-e389dc1d2512",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "File Insurance Claim"
               ]
             }
           }
         ],
         "Errors": [
           {
-            "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
+            "NextAction": "e424488d-7082-43b6-9862-ac72edac521a",
             "ErrorType": "NoMatchingCondition"
-          },
-          {
-            "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
-            "ErrorType": "NoMatchingError"
-          },
-          {
-            "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
-            "ErrorType": "TimeLimitExceeded"
           }
         ]
       }
     },
     {
-      "Parameters": {},
-      "Identifier": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
-      "Type": "DisconnectParticipant",
-      "Transitions": {}
-    },
-    {
       "Parameters": {
-        "Name": "New Insurance Claim",
-        "ContactFlowId": "",
-        "Description": "Details of the new insurance claim",
-        "Attributes": {
-          "PolicyID": "$.External.PolicyID",
-          "Incident": "$.External.Incident",
-          "Location": "$.External.Location",
-          "Date": "$.External.Date",
-          "LocationOfDamage": "$.External.LocationOfDamage",
-          "OnPolicy": "$.External.OnPolicy",
-          "Expedited": "$.External.Expedited"
+        "LambdaFunctionARN": "arn:aws:lambda:us-west-2:774622750279:function:AgentWorkspaceExampleLambda",
+        "InvocationTimeLimitSeconds": "8",
+        "LambdaInvocationAttributes": {
+          "dataFromViews": "$.Views"
+        },
+        "ResponseValidation": {
+          "ResponseType": "JSON"
         }
       },
-      "Identifier": "4ae69bd0-d6dd-4cfb-a1b9-92aebdb6902f",
-      "Type": "CreateTask",
+      "Identifier": "45320f4b-7d24-4508-819a-9b1c2f1afc14",
+      "Type": "InvokeLambdaFunction",
       "Transitions": {
-        "NextAction": "8de5e830-60b0-44c3-8eaf-b1d5b0cbd7ba",
+        "NextAction": "4ae69bd0-d6dd-4cfb-a1b9-92aebdb6902f",
         "Errors": [
           {
-            "NextAction": "8de5e830-60b0-44c3-8eaf-b1d5b0cbd7ba",
+            "NextAction": "4ae69bd0-d6dd-4cfb-a1b9-92aebdb6902f",
             "ErrorType": "NoMatchingError"
           }
         ]
@@ -800,275 +825,11 @@
     {
       "Parameters": {
         "ViewResource": {
-          "Id": "wizard",
+          "Id": "formWithSteps",
           "Version": "Latest"
         },
         "InvocationTimeLimitSeconds": "300",
         "ViewData": {
-          "Steps": [
-            {
-              "Heading": "Insurance Claim",
-              "_id": "insuranceClaim",
-              "Selected": true
-            },
-            {
-              "Heading": "Confirmation",
-              "_id": "confirmation"
-            }
-          ],
-          "StepSection": {
-            "Heading": "Insurance Claim",
-            "_id": "insuranceClaim",
-            "Content": [
-              {
-                "_id": "contactAttributes",
-                "Type": "Attributes",
-                "Heading": "Contact Information",
-                "IsEditable": false,
-                "LayoutConfiguration": {
-                  "ColumnLayout": {
-                    "columns": "2",
-                    "borders": "vertical"
-                  }
-                },
-                "Items": [
-                  {
-                    "Items": [
-                      {
-                        "Label": "First Name",
-                        "Value": "$.Customer.FirstName",
-                        "Name": "firstName"
-                      },
-                      {
-                        "Label": "Last Name",
-                        "Value": "$.Customer.LastName",
-                        "Name": "lastName"
-                      }
-                    ]
-                  },
-                  {
-                    "Items": [
-                      {
-                        "Label": "Phone Number",
-                        "Value": "$.Customer.PhoneNumber",
-                        "Name": "phoneNumber"
-                      },
-                      {
-                        "Label": "Email Address",
-                        "Value": "$.Customer.EmailAddress",
-                        "Name": "emailAddress"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "_id": "claimForm",
-                "Type": "FormSection",
-                "Heading": "Claim Overview",
-                "Items": [
-                  {
-                    "LayoutConfiguration": {
-                      "Grid": [
-                        {
-                          "colspan": {
-                            "default": "6",
-                            "xs": "4"
-                          }
-                        },
-                        {
-                          "colspan": {
-                            "default": "6",
-                            "xs": "4"
-                          }
-                        },
-                        {
-                          "colspan": {
-                            "default": "6",
-                            "xs": "4"
-                          }
-                        }
-                      ]
-                    },
-                    "Items": [
-                      {
-                        "Type": "FormInput",
-                        "Fluid": true,
-                        "InputType": "text",
-                        "Label": "Policy ID",
-                        "Name": "policyID"
-                      },
-                      {
-                        "Type": "Dropdown",
-                        "Fluid": true,
-                        "Label": "Incident Type",
-                        "Name": "incident",
-                        "Options": [
-                          {
-                            "Label": "Glass Only Incident",
-                            "Value": "Glass Only Incident"
-                          },
-                          {
-                            "Label": "Roadside Assistance",
-                            "Value": "Roadside Assistance"
-                          },
-                          {
-                            "Label": "Accident/Collision",
-                            "Value": "Accident/Collision"
-                          },
-                          {
-                            "Label": "Weather Incident",
-                            "Value": "Weather Incident"
-                          },
-                          {
-                            "Label": "Animal Incident",
-                            "Value": "Animal Incident"
-                          },
-                          {
-                            "Label": "Unoccupied Vehicle Incident",
-                            "Value": "Unoccupied Vehicle Incident"
-                          },
-                          {
-                            "Label": "Stolen or Vandalized Vehicle",
-                            "Value": "Stolen or Vandalized Vehicle"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Dropdown",
-                        "Fluid": true,
-                        "Label": "Location",
-                        "Name": "location",
-                        "Options": [
-                          {
-                            "Label": "United States",
-                            "Value": "United States"
-                          },
-                          {
-                            "Label": "Canada",
-                            "Value": "Canada"
-                          },
-                          {
-                            "Label": "Mexico",
-                            "Value": "Mexico"
-                          },
-                          {
-                            "Label": "International",
-                            "Value": "International"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "DatePicker",
-                        "Label": "Date",
-                        "Name": "date",
-                        "DefaultValue": "2022-10-15",
-                        "Fluid": true
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "_id": "DamageDetails",
-                "Type": "FormSection",
-                "Heading": "Damage Details",
-                "Items": [
-                  {
-                    "LayoutConfiguration": {
-                      "Grid": [
-                        {
-                          "colspan": {
-                            "default": "6",
-                            "xs": "4"
-                          }
-                        }
-                      ]
-                    },
-                    "Items": [
-                      {
-                        "Type": "Dropdown",
-                        "Fluid": true,
-                        "Label": "Location of Damage",
-                        "Name": "locationOfDamage",
-                        "DefaultValue": [],
-                        "Options": [
-                          {
-                            "Label": "Windshield",
-                            "Value": "Windshield"
-                          },
-                          {
-                            "Label": "Back Side",
-                            "Value": "Back Side"
-                          },
-                          {
-                            "Label": "Driver Side",
-                            "Value": "Driver Side"
-                          },
-                          {
-                            "Label": "Passenger Side",
-                            "Value": "Passenger Side"
-                          },
-                          {
-                            "Label": "Sunroof",
-                            "Value": "Sunroof"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "LayoutConfiguration": {
-                      "Grid": [
-                        {
-                          "colspan": {
-                            "default": "8",
-                            "xs": "4"
-                          }
-                        }
-                      ]
-                    },
-                    "Items": [
-                      {
-                        "Type": "RadioGroup",
-                        "Label": "Is the vehicle on the insurance policy",
-                        "Name": "onPolicy",
-                        "Fluid": true,
-                        "DefaultValue": [],
-                        "Options": [
-                          {
-                            "Label": "Yes",
-                            "Value": "yes"
-                          },
-                          {
-                            "Label": "No",
-                            "Value": "no"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "RadioGroup",
-                        "Label": "Is this an expedited claim?",
-                        "Name": "expedited",
-                        "Fluid": true,
-                        "DefaultValue": [],
-                        "Options": [
-                          {
-                            "Label": "Yes",
-                            "Value": "yes"
-                          },
-                          {
-                            "Label": "No",
-                            "Value": "no"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           "Heading": "File insurance claim",
           "AttributeBar": [
             {
@@ -1082,6 +843,192 @@
             {
               "Label": "Voice ID Status",
               "Value": "$.Attributes.VoiceIDStatus"
+            }
+          ],
+          "Sections": [
+            {
+              "Heading": "Customer Information",
+              "Type": "DataSection",
+              "IsEditable": false,
+              "Configuration": {},
+              "Items": [
+                {
+                  "AutoOpen": false,
+                  "Label": "First Name",
+                  "Value": "$.Customer.FirstName",
+                  "Copyable": false,
+                  "ResourceId": "firstName"
+                },
+                {
+                  "AutoOpen": false,
+                  "Label": "Last Name",
+                  "Value": "$.Customer.LastName",
+                  "Copyable": false,
+                  "ResourceId": "lastName"
+                },
+                {
+                  "AutoOpen": false,
+                  "Label": "Phone Number",
+                  "Value": "$.Customer.PhoneNumber",
+                  "Copyable": false,
+                  "ResourceId": "phoneNumber"
+                },
+                {
+                  "AutoOpen": false,
+                  "Label": "Email Address",
+                  "Value": "$.Customer.EmailAddress",
+                  "Copyable": false,
+                  "ResourceId": "emailAddress"
+                }
+              ]
+            },
+            {
+              "Heading": "Claim Overview",
+              "Type": "FormSection",
+              "IsEditable": false,
+              "Configuration": {},
+              "Items": [
+                {
+                  "Type": "FormInput",
+                  "Required": true,
+                  "Fluid": false,
+                  "Name": "policyId",
+                  "MultiSelect": false,
+                  "InputType": "number",
+                  "Label": "Policy ID",
+                  "HelperText": "Enter the policy ID here"
+                },
+                {
+                  "Required": true,
+                  "Fluid": false,
+                  "MultiSelect": true,
+                  "HelperText": "What type of incident was it",
+                  "Label": "Incident Type",
+                  "Name": "incident",
+                  "Type": "Dropdown",
+                  "Options": [
+                    {
+                      "Label": "Glass Only Incident",
+                      "Value": "Glass Only Incident"
+                    },
+                    {
+                      "Label": "Roadside Assistance",
+                      "Value": "Roadside Assistance"
+                    },
+                    {
+                      "Label": "Accident/Collision",
+                      "Value": "Accident/Collision"
+                    },
+                    {
+                      "Label": "Weather Incident",
+                      "Value": "Weather Incident"
+                    },
+                    {
+                      "Label": "Animal Incident",
+                      "Value": "Animal Incident"
+                    },
+                    {
+                      "Label": "Unoccupied Vehicle Incident",
+                      "Value": "Unoccupied Vehicle Incident"
+                    },
+                    {
+                      "Label": "Stolen or Vandalized Vehicle",
+                      "Value": "Stolen or Vandalized Vehicle"
+                    }
+                  ]
+                },
+                {
+                  "Required": true,
+                  "Fluid": false,
+                  "MultiSelect": false,
+                  "Type": "Dropdown",
+                  "Options": [
+                    {
+                      "Label": "United States",
+                      "Value": "United States"
+                    },
+                    {
+                      "Label": "Canada",
+                      "Value": "Canada"
+                    },
+                    {
+                      "Label": "Mexico",
+                      "Value": "Mexico"
+                    },
+                    {
+                      "Label": "International",
+                      "Value": "International"
+                    }
+                  ],
+                  "Name": "location",
+                  "Label": "Location"
+                },
+                {
+                  "Required": false,
+                  "Fluid": false,
+                  "MultiSelect": false,
+                  "Type": "DatePicker",
+                  "Label": "Incident Date",
+                  "Name": "date"
+                }
+              ]
+            },
+            {
+              "Heading": "Damage Details",
+              "Type": "FormSection",
+              "IsEditable": false,
+              "Configuration": {},
+              "Items": [
+                {
+                  "Type": "Dropdown",
+                  "Required": false,
+                  "Fluid": false,
+                  "Label": "Damage Location",
+                  "MultiSelect": false,
+                  "Name": "locationOfDamage",
+                  "Options": [
+                    {
+                      "Label": "Windshield",
+                      "Value": "Windshield"
+                    },
+                    {
+                      "Label": "Back Side",
+                      "Value": "Back Side"
+                    },
+                    {
+                      "Label": "Driver Side",
+                      "Value": "Driver Side"
+                    },
+                    {
+                      "Label": "Passenger Side",
+                      "Value": "Passenger Side"
+                    },
+                    {
+                      "Label": "Sunroof",
+                      "Value": "Sunroof"
+                    }
+                  ]
+                },
+                {
+                  "DefaultValue": "",
+                  "Type": "RadioGroup",
+                  "Required": true,
+                  "Fluid": true,
+                  "Label": "Is the vehicle on the insurance policy?",
+                  "Name": "RadioGroup",
+                  "Options": [
+                    {
+                      "Value": "yes",
+                      "Label": "Yes"
+                    },
+                    {
+                      "Value": "no",
+                      "Label": "No"
+                    }
+                  ],
+                  "MultiSelect": false
+                }
+              ]
             }
           ],
           "Cancel": {
@@ -1143,29 +1090,6 @@
           {
             "NextAction": "a37c19d9-8ecc-4d52-ae06-b712e60e22be",
             "ErrorType": "TimeLimitExceeded"
-          }
-        ]
-      }
-    },
-    {
-      "Parameters": {
-        "LambdaFunctionARN": "",
-        "InvocationTimeLimitSeconds": "8",
-        "LambdaInvocationAttributes": {
-          "dataFromViews": "$.Views"
-        },
-        "ResponseValidation": {
-          "ResponseType": "JSON"
-        }
-      },
-      "Identifier": "45320f4b-7d24-4508-819a-9b1c2f1afc14",
-      "Type": "InvokeLambdaFunction",
-      "Transitions": {
-        "NextAction": "4ae69bd0-d6dd-4cfb-a1b9-92aebdb6902f",
-        "Errors": [
-          {
-            "NextAction": "4ae69bd0-d6dd-4cfb-a1b9-92aebdb6902f",
-            "ErrorType": "NoMatchingError"
           }
         ]
       }
