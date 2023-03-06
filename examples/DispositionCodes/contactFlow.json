@@ -7,10 +7,16 @@
       "y": 40
     },
     "ActionMetadata": {
+      "9118e2fb-c62f-4c29-9eff-e93da91cac29": {
+        "position": {
+          "x": 156,
+          "y": 20.8
+        }
+      },
       "fbb706b1-674c-422c-9859-b78dff7de155": {
         "position": {
           "x": 1052,
-          "y": 23.200000000000003
+          "y": 23.2
         },
         "parameters": {
           "ViewResource": {
@@ -31,27 +37,28 @@
           }
         }
       },
-      "9118e2fb-c62f-4c29-9eff-e93da91cac29": {
-        "position": {
-          "x": 156,
-          "y": 20.8
-        }
-      },
       "61f4731f-eabe-4d1d-835c-a35956299244": {
         "position": {
-          "x": 1360.8000000000002,
-          "y": 311.20000000000005
+          "x": 1360.8,
+          "y": 311.2
         }
+      },
+      "032fdba4-bfbd-44b0-9cc4-137dbe7716cd": {
+        "position": {
+          "x": 392.8,
+          "y": 22.4
+        },
+        "dynamicParams": []
       },
       "2c383a61-44af-4cac-90e3-e68383c807e5": {
         "position": {
           "x": 787.2,
-          "y": 26.400000000000002
+          "y": 26.4
         },
         "parameters": {
           "ViewResource": {
             "Id": {
-              "displayName": "Form"
+              "displayName": "Form View"
             }
           },
           "InvocationTimeLimitSeconds": {
@@ -75,22 +82,25 @@
             }
           }
         }
-      },
-      "032fdba4-bfbd-44b0-9cc4-137dbe7716cd": {
-        "position": {
-          "x": 392.8,
-          "y": 22.400000000000002
-        },
-        "dynamicParams": []
       }
     },
-    "name": "DispositionCodesExample",
+    "name": "DispositionCodesExampleForGA",
     "description": "",
     "type": "contactFlow",
     "status": "published",
     "hash": {}
   },
   "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "9118e2fb-c62f-4c29-9eff-e93da91cac29",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd"
+      }
+    },
     {
       "Parameters": {
         "ViewResource": {
@@ -156,16 +166,6 @@
       }
     },
     {
-      "Parameters": {
-        "FlowLoggingBehavior": "Enabled"
-      },
-      "Identifier": "9118e2fb-c62f-4c29-9eff-e93da91cac29",
-      "Type": "UpdateFlowLoggingBehavior",
-      "Transitions": {
-        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd"
-      }
-    },
-    {
       "Parameters": {},
       "Identifier": "61f4731f-eabe-4d1d-835c-a35956299244",
       "Type": "DisconnectParticipant",
@@ -173,8 +173,29 @@
     },
     {
       "Parameters": {
+        "Attributes": {
+          "CustomerFullName": "Sample Contact",
+          "IVRResponse": "Lost luggage",
+          "CaseID": "12345",
+          "AgentName": "Sample Agent"
+        }
+      },
+      "Identifier": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "2c383a61-44af-4cac-90e3-e68383c807e5",
+        "Errors": [
+          {
+            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
         "ViewResource": {
-          "Id": "form",
+          "Id": "formWithSteps",
           "Version": "Latest"
         },
         "InvocationTimeLimitSeconds": "300",
@@ -201,155 +222,95 @@
           ],
           "Sections": [
             {
-              "_id": "agentInformation",
+              "Heading": "Agent Information",
               "Type": "FormSection",
-              "Heading": "Agent information",
+              "IsEditable": false,
+              "Configuration": {},
               "Items": [
                 {
-                  "LayoutConfiguration": {
-                    "Grid": [
-                      {
-                        "colspan": {
-                          "default": "6",
-                          "xs": "4"
-                        }
-                      }
-                    ]
-                  },
-                  "Items": [
-                    {
-                      "Type": "FormInput",
-                      "Fluid": true,
-                      "InputType": "text",
-                      "Label": "Agent name",
-                      "Name": "agentName",
-                      "DefaultValue": "$.Attributes.AgentName"
-                    }
-                  ]
-                },
-                {
-                  "LayoutConfiguration": {
-                    "Grid": [
-                      {
-                        "colspan": {
-                          "default": "6",
-                          "xs": "4"
-                        }
-                      },
-                      {
-                        "colspan": {
-                          "default": "6",
-                          "xs": "4"
-                        }
-                      }
-                    ]
-                  },
-                  "Items": [
-                    {
-                      "Type": "DatePicker",
-                      "Label": "Date",
-                      "Name": "date",
-                      "DefaultValue": "2022-10-15",
-                      "Fluid": true
-                    },
-                    {
-                      "Type": "TimeInput",
-                      "Label": "Time",
-                      "Name": "time",
-                      "DefaultValue": "19:00",
-                      "Fluid": true
-                    }
-                  ]
+                  "AutoOpen": false,
+                  "Label": "Agent Namee",
+                  "Value": "$.Attributes.AgentName",
+                  "Copyable": false,
+                  "ResourceId": "agentName"
                 }
               ]
             },
             {
-              "_id": "dispositionCodes",
-              "Type": "FormSection",
               "Heading": "Tag this call",
+              "Type": "FormSection",
+              "IsEditable": false,
+              "Configuration": {},
               "Items": [
                 {
-                  "LayoutConfiguration": {
-                    "Grid": [
-                      {
-                        "colspan": {
-                          "default": "6",
-                          "xs": "4"
-                        }
-                      }
-                    ]
-                  },
-                  "Items": [
+                  "Required": true,
+                  "Fluid": false,
+                  "MultiSelect": true,
+                  "HelperText": "Select relevant contact tags",
+                  "Label": "Call tags",
+                  "Name": "callTags",
+                  "Type": "Dropdown",
+                  "Options": [
                     {
-                      "Type": "Dropdown",
-                      "Fluid": true,
-                      "Label": "Call tags",
-                      "Name": "callTags",
-                      "MultiSelect": true,
-                      "DefaultValue": [
-                        "1"
-                      ],
-                      "Options": [
-                        {
-                          "Label": "No tags",
-                          "Value": "1"
-                        },
-                        {
-                          "Label": "newBooking",
-                          "Value": "2"
-                        },
-                        {
-                          "Label": "forgotMembershipNumber",
-                          "Value": "3"
-                        },
-                        {
-                          "Label": "cancelBooking",
-                          "Value": "4"
-                        },
-                        {
-                          "Label": "generalInquiry",
-                          "Value": "5"
-                        },
-                        {
-                          "Label": "lostLuggage",
-                          "Value": "6"
-                        },
-                        {
-                          "Label": "amendBooking",
-                          "Value": "7"
-                        }
-                      ]
+                      "Label": "No tags",
+                      "Value": "1"
+                    },
+                    {
+                      "Label": "newBooking",
+                      "Value": "2"
+                    },
+                    {
+                      "Label": "forgotMembershipNumber",
+                      "Value": "3"
+                    },
+                    {
+                      "Label": "cancelBooking",
+                      "Value": "4"
+                    },
+                    {
+                      "Label": "generalInquiry",
+                      "Value": "5"
+                    },
+                    {
+                      "Label": "lostLuggage",
+                      "Value": "6"
+                    },
+                    {
+                      "Label": "amendBooking",
+                      "Value": "7"
                     }
                   ]
                 },
                 {
-                  "LayoutConfiguration": {
-                    "Grid": [
-                      {
-                        "colspan": {
-                          "default": "6",
-                          "xs": "4"
-                        }
-                      }
-                    ]
-                  },
-                  "Items": [
+                  "Required": false,
+                  "Fluid": false,
+                  "MultiSelect": false,
+                  "Type": "DatePicker",
+                  "Label": "Contact Date",
+                  "Name": "date"
+                },
+                {
+                  "Required": false,
+                  "Fluid": false,
+                  "MultiSelect": false,
+                  "Type": "TimePicker",
+                  "Label": "Contact Time",
+                  "Name": "time"
+                },
+                {
+                  "Type": "RadioGroup",
+                  "Label": "Where you able to find all the data you needed to solve the customer issue?",
+                  "Name": "couldFindInformation",
+                  "Fluid": true,
+                  "DefaultValue": "no",
+                  "Options": [
                     {
-                      "Type": "RadioGroup",
-                      "Label": "Where you able to find all the data you needed to solve the customer issue?",
-                      "Name": "couldFindInformation",
-                      "Fluid": true,
-                      "DefaultValue": "no",
-                      "Options": [
-                        {
-                          "Label": "Yes",
-                          "Value": "yes"
-                        },
-                        {
-                          "Label": "No",
-                          "Value": "no"
-                        }
-                      ]
+                      "Label": "Yes",
+                      "Value": "yes"
+                    },
+                    {
+                      "Label": "No",
+                      "Value": "no"
                     }
                   ]
                 }
@@ -389,6 +350,15 @@
                 "Next"
               ]
             }
+          },
+          {
+            "NextAction": "fbb706b1-674c-422c-9859-b78dff7de155",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Step"
+              ]
+            }
           }
         ],
         "Errors": [
@@ -403,27 +373,6 @@
           {
             "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
             "ErrorType": "TimeLimitExceeded"
-          }
-        ]
-      }
-    },
-    {
-      "Parameters": {
-        "Attributes": {
-          "CustomerFullName": "Sample Contact",
-          "IVRResponse": "Lost luggage",
-          "CaseID": "12345",
-          "AgentName": "Sample Agent"
-        }
-      },
-      "Identifier": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
-      "Type": "UpdateContactAttributes",
-      "Transitions": {
-        "NextAction": "2c383a61-44af-4cac-90e3-e68383c807e5",
-        "Errors": [
-          {
-            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
-            "ErrorType": "NoMatchingError"
           }
         ]
       }
