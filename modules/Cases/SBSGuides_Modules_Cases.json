@@ -1,0 +1,547 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "e5e20ec2-6a08-4d7f-bf7d-f6e0997ff227",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "e5e20ec2-6a08-4d7f-bf7d-f6e0997ff227": {
+        "position": {
+          "x": 173.6,
+          "y": 32.8
+        }
+      },
+      "2dbf5688-039b-4601-8833-a404fa687316": {
+        "position": {
+          "x": 181.6,
+          "y": 217.6
+        },
+        "useDynamic": {},
+        "customerProfilesAction": "CreateCustomerProfile"
+      },
+      "a43a3163-817f-4d93-a40b-a6943fe7e8e0": {
+        "position": {
+          "x": 683.2,
+          "y": 56
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "ENTER LAMBDA HERE"
+          }
+        },
+        "dynamicMetadata": {
+          "dataFromViews": false
+        }
+      },
+      "0f41b813-2ecc-440b-86e0-80b79913bb86": {
+        "position": {
+          "x": 452.8,
+          "y": 24
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Form View"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "Sections": {
+              "useJson": true
+            },
+            "Cancel": {
+              "useJson": true
+            },
+            "Next": {
+              "useJson": true
+            },
+            "Back": {
+              "useJson": true
+            },
+            "Previous": {
+              "useJson": true
+            }
+          }
+        }
+      },
+      "de7817e3-03cb-4118-9ddb-15db4461dfd8": {
+        "position": {
+          "x": 900.8,
+          "y": 60.8
+        },
+        "parameters": {
+          "CaseTemplateId": {
+            "displayName": "SELECT A CASE TEMPLATE"
+          },
+          "CaseRequestFields": {
+            "summary": {
+              "useDynamic": true,
+              "displayName": "Summary"
+            },
+            "customer_id": {
+              "useDynamic": true,
+              "displayName": "Customer Id",
+              "required": true
+            },
+            "status": {
+              "displayName": "Status",
+              "required": true
+            },
+            "title": {
+              "useDynamic": true,
+              "displayName": "Title",
+              "required": true
+            }
+          }
+        },
+        "action": "createCaseAction",
+        "templateName": "SELECT A CASE TEMPLATE",
+        "requestFieldsOptions": {
+          "summary": "Summary",
+          "customer_id": "Customer Id",
+          "status": "Status",
+          "title": "Title"
+        },
+        "requiredFieldsOptions": [
+          "customer_id",
+          "status",
+          "title"
+        ]
+      },
+      "16cdb412-d550-437a-babe-d369f3eaa4b8": {
+        "position": {
+          "x": 1643.2,
+          "y": 59.2
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Detail"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "Sections": {
+              "useJson": true
+            }
+          }
+        }
+      },
+      "22a13178-5d76-4ae6-9377-2686a420bc58": {
+        "position": {
+          "x": 2018.4,
+          "y": 199.2
+        }
+      },
+      "b4ae85c6-0ad3-4bad-8459-0df43400bded": {
+        "position": {
+          "x": 1136.8,
+          "y": 60
+        },
+        "parameters": {
+          "TimeLimitSeconds": {
+            "unit": 1
+          }
+        },
+        "timeoutUnit": {
+          "display": "Seconds",
+          "value": "second"
+        }
+      },
+      "5d7d0ddb-7596-48ec-9cf8-8be607a29cc8": {
+        "position": {
+          "x": 1365.6,
+          "y": 52.8
+        },
+        "parameters": {
+          "CaseResponseFields": [
+            {
+              "displayName": "Case Id"
+            },
+            {
+              "displayName": "Customer Id"
+            },
+            {
+              "displayName": "Reference Number"
+            },
+            {
+              "displayName": "Status"
+            },
+            {
+              "displayName": "Summary"
+            },
+            {
+              "displayName": "Title"
+            }
+          ],
+          "CaseRequestFields": {
+            "title": {
+              "displayName": "Title"
+            }
+          }
+        },
+        "action": "getCaseAction",
+        "requestFieldsOptions": {
+          "title": "Title"
+        },
+        "responseFieldsOptions": {
+          "case_id": "Case Id",
+          "customer_id": "Customer Id",
+          "reference_number": "Reference Number",
+          "status": "Status",
+          "summary": "Summary",
+          "title": "Title"
+        }
+      }
+    },
+    "name": "SBSGuides_Modules_Cases",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "e5e20ec2-6a08-4d7f-bf7d-f6e0997ff227",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "2dbf5688-039b-4601-8833-a404fa687316"
+      }
+    },
+    {
+      "Parameters": {
+        "ProfileRequestData": {
+          "FirstName": "Sample",
+          "LastName": "Profile"
+        },
+        "ProfileResponseData": [
+          "FirstName",
+          "LastName"
+        ]
+      },
+      "Identifier": "2dbf5688-039b-4601-8833-a404fa687316",
+      "Type": "CreateCustomerProfile",
+      "Transitions": {
+        "NextAction": "0f41b813-2ecc-440b-86e0-80b79913bb86",
+        "Errors": [
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "ENTER LAMBDA HERE",
+        "InvocationTimeLimitSeconds": "3",
+        "LambdaInvocationAttributes": {
+          "dataFromViews": "$.Views"
+        },
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "a43a3163-817f-4d93-a40b-a6943fe7e8e0",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "de7817e3-03cb-4118-9ddb-15db4461dfd8",
+        "Errors": [
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "formWithSteps",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Create a new sample Case",
+          "Sections": [
+            {
+              "Heading": "Case details",
+              "Type": "FormSection",
+              "IsEditable": false,
+              "Configuration": {},
+              "Items": [
+                {
+                  "Required": true,
+                  "Fluid": false,
+                  "Type": "FormInput",
+                  "Label": "Case Title",
+                  "Name": "caseTitle",
+                  "DefaultValue": "Sample case title"
+                },
+                {
+                  "Required": false,
+                  "Fluid": false,
+                  "MultiSelect": false,
+                  "Type": "FormInput",
+                  "Label": "Case Summary",
+                  "Name": "caseSummary",
+                  "DefaultValue": "Sample case summary"
+                }
+              ]
+            }
+          ],
+          "Cancel": {
+            "Label": "Cancel"
+          },
+          "Next": {
+            "Label": "Create sample case"
+          },
+          "Back": {
+            "Label": "Back"
+          },
+          "Previous": {
+            "Label": "Back"
+          }
+        }
+      },
+      "Identifier": "0f41b813-2ecc-440b-86e0-80b79913bb86",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+        "Conditions": [
+          {
+            "NextAction": "2dbf5688-039b-4601-8833-a404fa687316",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          },
+          {
+            "NextAction": "a43a3163-817f-4d93-a40b-a6943fe7e8e0",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Next"
+              ]
+            }
+          },
+          {
+            "NextAction": "a43a3163-817f-4d93-a40b-a6943fe7e8e0",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Step"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LinkContactToCase": "false",
+        "CaseTemplateId": "f9b90c5f-5cc6-4d9b-a18d-fc14f601ef88",
+        "CaseRequestFields": {
+          "summary": "$.External.CaseSummary",
+          "customer_id": "$.Customer.ProfileARN",
+          "status": "open",
+          "title": "$.External.CaseTitle"
+        }
+      },
+      "Identifier": "de7817e3-03cb-4118-9ddb-15db4461dfd8",
+      "Type": "CreateCase",
+      "Transitions": {
+        "NextAction": "b4ae85c6-0ad3-4bad-8459-0df43400bded",
+        "Errors": [
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "detail",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Case Data",
+          "Description": "This is the data from the most recent case you made",
+          "Sections": [
+            {
+              "Columns": "4",
+              "Items": [
+                {
+                  "Label": "Case ID",
+                  "Value": "$.Case.case_id"
+                },
+                {
+                  "Label": "Case Reference Number",
+                  "Value": "$.Case.reference_number"
+                },
+                {
+                  "Label": "Case Title",
+                  "Value": "$.Case.title"
+                },
+                {
+                  "Label": "Customer ID",
+                  "Value": "$.Case.customer_idr"
+                },
+                {
+                  "Label": "Cast Status",
+                  "Value": "$.Case.status"
+                },
+                {
+                  "Label": "Case Summary",
+                  "Value": "$.Case.summary"
+                }
+              ]
+            }
+          ],
+          "Actions": "[\"Create new case\"]",
+          "Back": "Back"
+        }
+      },
+      "Identifier": "16cdb412-d550-437a-babe-d369f3eaa4b8",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+        "Conditions": [
+          {
+            "NextAction": "0f41b813-2ecc-440b-86e0-80b79913bb86",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "ActionSelected"
+              ]
+            }
+          },
+          {
+            "NextAction": "0f41b813-2ecc-440b-86e0-80b79913bb86",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "22a13178-5d76-4ae6-9377-2686a420bc58",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "TimeLimitSeconds": "5"
+      },
+      "Identifier": "b4ae85c6-0ad3-4bad-8459-0df43400bded",
+      "Type": "Wait",
+      "Transitions": {
+        "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+        "Conditions": [
+          {
+            "NextAction": "5d7d0ddb-7596-48ec-9cf8-8be607a29cc8",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "WaitCompleted"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LinkContactToCase": "true",
+        "GetLastUpdatedCase": "true",
+        "CaseResponseFields": [
+          "case_id",
+          "customer_id",
+          "reference_number",
+          "status",
+          "summary",
+          "title"
+        ],
+        "CaseRequestFields": {
+          "title": "$.External.CaseTitle"
+        }
+      },
+      "Identifier": "5d7d0ddb-7596-48ec-9cf8-8be607a29cc8",
+      "Type": "GetCase",
+      "Transitions": {
+        "NextAction": "16cdb412-d550-437a-babe-d369f3eaa4b8",
+        "Errors": [
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "ContactNotLinked"
+          },
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "MultipleFound"
+          },
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoneFound"
+          },
+          {
+            "NextAction": "22a13178-5d76-4ae6-9377-2686a420bc58",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}
