@@ -28,7 +28,7 @@ This example uses several Amazon Connect features that are not enabled by defaul
 *Note:* The Lambda functions will require specific permissions to use SNS and SES, that you can set up in each individual function's role.
 
 2. Create and configure the main contact flow
-    1. Download the physioView.json
+    1. Download the contactFlow.json
     2. In your Amazon Connect instance go to **Routing** > **ContactFlows** > **Create contact flow**.
     3. Click the drop-down arrow on the right and choose **Import (beta)** and import the physioView.json.
     4. Click the 2x **Invoke AWS Lambda function** block. For the `Function ARN`, select the AWS Lambda functions that will send the SMS / email. Click **Save**.
@@ -41,7 +41,7 @@ This example uses several Amazon Connect features that are not enabled by defaul
     9. Copy the contact flow ID. This value is everything after *contact-flow/* in the contact flow ARN. See [here](https://docs.aws.amazon.com/connect/latest/adminguide/find-contact-flow-id.html) for more detailed instructions.
 
 2. Create and configure the handler contact flow
-    1. Download the inboundContactFlow.json
+    1. Download the handlerFlow.json
     2. In your Amazon Connect instance go to **Routing** > **ContactFlows** > **Create contact flow**.
     3. Click the drop-down arrow on the right and choose **Import (beta)** and import the inboundContactFlow.json.
     4. Click the **Set contact attributes** block. Set the `DefaultFlowForAgentUI` attribute value as the contact flow ID you copied while creating the main contact flow.
