@@ -5,25 +5,23 @@ export const handler = async (event, context, callback) => {
     const sesClient = new SESClient();
     
     const dataFromForm = event.Details.Parameters.formData;
-    
-    console.log(dataFromForm);
 
     const messageBodyHTML = 
-        `<p>Patient: ${dataFromForm.firstName} ${dataFromForm.lastName}</p>
+        `<p>Message: ${event.Details.Attributes.CustomerFullName}</p>
         
-        <h4>Appointment Cancellation</h4>
+        <h4>Message from SBSGuides</h4>
         <ul>
-          <li>Date: ${dataFromForm.date}</li>
-          <li>Time: ${dataFromForm.date}</li>
-          <li>Details: ${dataFromForm.details}</li>
+          <li>Date: ${dataFromForm['appt-day']}</li>
+          <li>Time: ${dataFromForm['appt-time']}</li>
+          <li>Details: ${dataFromForm['message-details']}</li>
         </ul>`;
         
-    const messageBody = `Patient ${dataFromForm.firstName} ${dataFromForm.lastName} have cancelled their appointment (${dataFromForm.date} - ${dataFromForm.time}) - ${dataFromForm.details}`;
+    const messageBody = `Message from SBSGuides. ${event.Details.Attributes.CustomerFullName}, with data 'date': ${dataFromForm['appt-day']}, 'time': ${dataFromForm['appt-time']}, and 'details':${dataFromForm['message-details']}`;
     
     const sendEmailCommand = new SendEmailCommand({
       Destination: { /* required */
         ToAddresses: [
-          event.Details.Parameters.physioEmail,
+          event.Details.Parameters.destinationEmail,
         ]
       },
       Message: { /* required */
@@ -39,7 +37,7 @@ export const handler = async (event, context, callback) => {
         },
         Subject: {
           Charset: 'UTF-8',
-          Data: 'Appointment cancellation'
+          Data: 'Message from SBSGuides'
         }
         },
       Source: event.Details.Parameters.systemEmail

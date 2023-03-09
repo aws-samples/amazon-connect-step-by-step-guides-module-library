@@ -14,7 +14,7 @@ export const handler = async(event) => {
     
     const params = {
         PhoneNumber: destination,
-        Message: `Patient ${dataFromForm.firstName} ${dataFromForm.lastName} have cancelled their appointment (${dataFromForm.date} - ${dataFromForm.time}) - ${dataFromForm.details}`
+        Message: `Message from SBSGuides. ${event.Details.Attributes.CustomerFullName}, with data 'date': ${dataFromForm['appt-day']}, 'time': ${dataFromForm['appt-time']}, and 'details':${dataFromForm['message-details']}`
     }
     
     const setAttributesCommand = new SetSMSAttributesCommand({
