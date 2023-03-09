@@ -8,7 +8,7 @@ There are 2 main Views in this example:
 2. A Form view, which is used to collect customer information in order to populate the email and SMS templates. The fields are auto-populated if Amazon Connect Customer Profiles data is available for that contact.
 
 ### Overall Flow
-Incoming contact (call) -> Contact flow set the SBSGuides view as `DefaultFlowForAgentUI` -> Send to queue -> Agent accepts contact -> Contact flow (contactFlow) -> Get profile -> Display Cards view with the procedure to follow -> Click "Card 2" -> Choose "Action 1" or "Action 2" -> Display Form view -> Enter details (will be prepopulated with customer profile data) -> Invoke Lambda to send SMS, and Invoke Lambda to send email -> Display Confirmation View -> Return to Cards view
+Incoming contact (handlerFlow) -> Contact flow set the SBSGuides view as `DefaultFlowForAgentUI` -> Send to queue -> Agent accepts contact -> Contact flow (contactFlow) -> Get profile -> Display Cards view with the procedure to follow -> Click "Card 2" -> Choose "Action 1" or "Action 2" -> Display Form view -> Enter details (will be prepopulated with customer profile data) -> Invoke Lambda to send SMS, and Invoke Lambda to send email -> Display Confirmation View -> Return to Cards view
 
 ## How to use
 
