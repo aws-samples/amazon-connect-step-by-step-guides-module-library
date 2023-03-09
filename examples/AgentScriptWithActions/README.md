@@ -8,7 +8,7 @@ There are 2 main Views in this example:
 2. A Form view, which is used to collect customer information in order to populate the email and SMS templates. The fields are auto-populated if Amazon Connect Customer Profiles data is available for that contact.
 
 ### Overall Flow
-Incoming contact (call) -> Contact flow set PhysioView as `DefaultFlowForAgentUI` -> Send to queue -> Agent accepts contact -> Contact flow (PhysioView) -> Get profile -> Display Cards view with the procedure to follow -> Click "Cancellations" -> Choose "Urgent Cancellation" or "Standard Cancellation" -> Display Form view -> Enter details (will be prepopulated with customer profile data) -> Invoke Lambda to send SMS + email if urgent / Invoke Lambda to send email if standard -> Display Confirmation View -> Return to Cards view
+Incoming contact (call) -> Contact flow set the SBSGuides view as `DefaultFlowForAgentUI` -> Send to queue -> Agent accepts contact -> Contact flow (contactFlow) -> Get profile -> Display Cards view with the procedure to follow -> Click "Card 2" -> Choose "Action 1" or "Action 2" -> Display Form view -> Enter details (will be prepopulated with customer profile data) -> Invoke Lambda to send SMS, and Invoke Lambda to send email -> Display Confirmation View -> Return to Cards view
 
 ## How to use
 
@@ -45,7 +45,7 @@ This example uses several Amazon Connect features that are not enabled by defaul
     2. In your Amazon Connect instance go to **Routing** > **ContactFlows** > **Create contact flow**.
     3. Click the drop-down arrow on the right and choose **Import (beta)** and import the inboundContactFlow.json.
     4. Click the **Set contact attributes** block. Set the `DefaultFlowForAgentUI` attribute value as the contact flow ID you copied while creating the main contact flow.
-    5. If you want to have a disconnect flow as well, set the `DisconnectFlowForAgentUI` attribute value as the contact flow ID of another step-by-step guide.. Otherwise delete the attribute.
+    5. If you want to have a disconnect flow as well, set the `DisconnectFlowForAgentUI` attribute value as the contact flow ID of another Step-By-Step Guide workflow. Otherwise delete the attribute.
     6. Set the `WorkingQueue` attribute value as the ARN of the queue you want to use while testing this example. To find the queue ARN in your Amazon Connect instance go to **Routing** > **Queues** and click the queue you want to use. Click the **Show additional queue information** dropdown to see the ARN.
     7. Click **Save**
     8. Click **Publish**
