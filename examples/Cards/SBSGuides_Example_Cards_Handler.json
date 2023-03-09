@@ -1,0 +1,316 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "61233594-a8da-477d-a011-32f38baa7d57",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "3c333159-9fcb-4766-89cf-928dec499c61": {
+        "position": {
+          "x": 1124.8,
+          "y": 37.6
+        }
+      },
+      "2e69c35b-f4cb-40ff-b536-a8abc7b25c44": {
+        "position": {
+          "x": 1374.4,
+          "y": 240.8
+        }
+      },
+      "b0dd877c-7fbb-4dcf-a12f-b8af02921c90": {
+        "position": {
+          "x": 873.6,
+          "y": 40.8
+        },
+        "parameters": {
+          "QueueId": {
+            "useDynamic": true
+          }
+        },
+        "useDynamic": true
+      },
+      "b2c55f7d-2c23-4273-816a-cf435f1eb52d": {
+        "position": {
+          "x": 653.6,
+          "y": 39.2
+        },
+        "children": [
+          "0594cf4d-12c9-4b02-9f90-09fc2807ff8a"
+        ],
+        "parameters": {
+          "Attributes": {
+            "CustomerPhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "CustomerPhoneNumber"
+        ],
+        "isSplitModule": true
+      },
+      "0594cf4d-12c9-4b02-9f90-09fc2807ff8a": {
+        "position": {
+          "x": 653.6,
+          "y": 39.2
+        },
+        "parameters": {
+          "CustomerId": {
+            "useDynamic": true
+          }
+        },
+        "dynamicParams": [
+          "customerId"
+        ],
+        "isSplitModule": true
+      },
+      "46474698-036c-4752-adf0-0ec8209b5787": {
+        "position": {
+          "x": 665.6,
+          "y": 472.8
+        }
+      },
+      "c489784d-25fc-4d1b-9dde-fdb21da005dd": {
+        "position": {
+          "x": 373.6,
+          "y": 432
+        },
+        "dynamicParams": []
+      },
+      "aacc2387-74f5-4fc3-b51a-d4d9665a6caa": {
+        "position": {
+          "x": 379.2,
+          "y": 237.6
+        },
+        "dynamicParams": []
+      },
+      "47168b7b-9e77-49b8-871e-eef7c32e17c6": {
+        "position": {
+          "x": 370.4,
+          "y": 41.6
+        },
+        "dynamicParams": []
+      },
+      "61233594-a8da-477d-a011-32f38baa7d57": {
+        "position": {
+          "x": 142.4,
+          "y": 43.2
+        },
+        "conditionMetadata": [
+          {
+            "id": "b4e1d4b3-ae1b-4c6d-a098-ed13c890b7f8",
+            "value": "1"
+          },
+          {
+            "id": "d1bc9cba-97b0-4984-aff5-ff3361ab62fc",
+            "value": "2"
+          },
+          {
+            "id": "dae9cd6e-ac63-42e9-81eb-2dc61f95419e",
+            "value": "3"
+          }
+        ]
+      }
+    },
+    "name": "SBSGuides_Example_Cards_Handler",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {},
+      "Identifier": "3c333159-9fcb-4766-89cf-928dec499c61",
+      "Type": "TransferContactToQueue",
+      "Transitions": {
+        "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+        "Errors": [
+          {
+            "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+            "ErrorType": "QueueAtCapacity"
+          },
+          {
+            "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "QueueId": "$.Attributes.WorkingQueue"
+      },
+      "Identifier": "b0dd877c-7fbb-4dcf-a12f-b8af02921c90",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "3c333159-9fcb-4766-89cf-928dec499c61",
+        "Errors": [
+          {
+            "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "DefaultFlowForAgentUI": "ENTER CARDS GUIDE FLOW ID HERE",
+          "CustomerPhoneNumber": "$.CustomerEndpoint.Address",
+          "WorkingQueue": "ENTER WORKING QUEUE ARN HERE"
+        }
+      },
+      "Identifier": "b2c55f7d-2c23-4273-816a-cf435f1eb52d",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "0594cf4d-12c9-4b02-9f90-09fc2807ff8a",
+        "Errors": [
+          {
+            "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "CustomerId": "$.CustomerEndpoint.Address"
+      },
+      "Identifier": "0594cf4d-12c9-4b02-9f90-09fc2807ff8a",
+      "Type": "UpdateContactData",
+      "Transitions": {
+        "NextAction": "b0dd877c-7fbb-4dcf-a12f-b8af02921c90",
+        "Errors": [
+          {
+            "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "46474698-036c-4752-adf0-0ec8209b5787",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "IVRResponse": "Something else"
+        }
+      },
+      "Identifier": "c489784d-25fc-4d1b-9dde-fdb21da005dd",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "b2c55f7d-2c23-4273-816a-cf435f1eb52d",
+        "Errors": [
+          {
+            "NextAction": "46474698-036c-4752-adf0-0ec8209b5787",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "IVRResponse": "Manage reservation"
+        }
+      },
+      "Identifier": "aacc2387-74f5-4fc3-b51a-d4d9665a6caa",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "b2c55f7d-2c23-4273-816a-cf435f1eb52d",
+        "Errors": [
+          {
+            "NextAction": "46474698-036c-4752-adf0-0ec8209b5787",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "IVRResponse": "Missing Luggage"
+        }
+      },
+      "Identifier": "47168b7b-9e77-49b8-871e-eef7c32e17c6",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "b2c55f7d-2c23-4273-816a-cf435f1eb52d",
+        "Errors": [
+          {
+            "NextAction": "46474698-036c-4752-adf0-0ec8209b5787",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "StoreInput": "False",
+        "InputTimeLimitSeconds": "5",
+        "Text": "Welcome to Any Airline contact center\n\nPress 1 if you are calling about missing luggage. Press 2 if you need help managing a reservation. Press 3 for something else."
+      },
+      "Identifier": "61233594-a8da-477d-a011-32f38baa7d57",
+      "Type": "GetParticipantInput",
+      "Transitions": {
+        "NextAction": "c489784d-25fc-4d1b-9dde-fdb21da005dd",
+        "Conditions": [
+          {
+            "NextAction": "47168b7b-9e77-49b8-871e-eef7c32e17c6",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "1"
+              ]
+            }
+          },
+          {
+            "NextAction": "aacc2387-74f5-4fc3-b51a-d4d9665a6caa",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "2"
+              ]
+            }
+          },
+          {
+            "NextAction": "c489784d-25fc-4d1b-9dde-fdb21da005dd",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "3"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "c489784d-25fc-4d1b-9dde-fdb21da005dd",
+            "ErrorType": "InputTimeLimitExceeded"
+          },
+          {
+            "NextAction": "c489784d-25fc-4d1b-9dde-fdb21da005dd",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "46474698-036c-4752-adf0-0ec8209b5787",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}
