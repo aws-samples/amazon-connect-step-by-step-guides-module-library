@@ -5,5 +5,10 @@ Within this folder are example contact flows that you can import to see how to g
 
 To ensure these examples work across all Amazon Connect instances, each of these examples are accompanied by a unique [handler flow](../flows/HandlerFlow/) that should be used with the example. To create a more dynamic experience we recommend customizing these handler flows to meet your specific use case and provide context to the step-by-step guide.
 
+## List of Examples
+- [AgentWorkspace](./AgentWorkspace/)
+- [BackendIntegration](./BackendIntegration/)
+- [DispositionCodes](./DispositionCodes/)
+
 ## How to use
 Because of the varying nature of the examples please refer to each example's README for how to deploy.
