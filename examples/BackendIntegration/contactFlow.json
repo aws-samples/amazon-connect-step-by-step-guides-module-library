@@ -1,0 +1,722 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "9118e2fb-c62f-4c29-9eff-e93da91cac29",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": -358.4,
+      "y": -72.8
+    },
+    "ActionMetadata": {
+      "9118e2fb-c62f-4c29-9eff-e93da91cac29": {
+        "position": {
+          "x": -104.8,
+          "y": -47.2
+        }
+      },
+      "35f6935a-b3f2-4b29-90f2-6cd2998da07b": {
+        "position": {
+          "x": -105.6,
+          "y": 141.6
+        },
+        "useDynamic": {},
+        "customerProfilesAction": "GetCustomerProfile"
+      },
+      "09e52458-e5f0-44e2-b792-f91357219202": {
+        "position": {
+          "x": -100,
+          "y": 417.6
+        },
+        "useDynamic": {},
+        "customerProfilesAction": "CreateCustomerProfile"
+      },
+      "032fdba4-bfbd-44b0-9cc4-137dbe7716cd": {
+        "position": {
+          "x": 160,
+          "y": 131.2
+        },
+        "dynamicParams": []
+      },
+      "61f4731f-eabe-4d1d-835c-a35956299244": {
+        "position": {
+          "x": 916.8,
+          "y": 506.4
+        }
+      },
+      "dde23aa2-75f5-4d02-b08c-14f44fa43b4d": {
+        "position": {
+          "x": 710.4,
+          "y": 30.4
+        },
+        "dynamicParams": []
+      },
+      "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7": {
+        "position": {
+          "x": 484,
+          "y": 21.6
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Cards"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 60
+          },
+          "ViewData": {
+            "AttributeBar": {
+              "useJson": true
+            },
+            "Back": {
+              "useJson": true
+            },
+            "NoMatchFound": {
+              "useJson": true
+            },
+            "Cards": {
+              "useJson": true
+            }
+          }
+        }
+      },
+      "11e0ea4b-5502-4849-b966-b0dc6d6ad789": {
+        "position": {
+          "x": 2302.4,
+          "y": 398.4
+        }
+      },
+      "1d7356ff-54b4-4293-9204-b19c2b39c7e4": {
+        "position": {
+          "x": 2140,
+          "y": 40.8
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Confirmation"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "AttributeBar": {
+              "useJson": true
+            }
+          }
+        }
+      },
+      "2c383a61-44af-4cac-90e3-e68383c807e5": {
+        "position": {
+          "x": 1044.8,
+          "y": 35.2
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Form View"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 60
+          },
+          "ViewData": {
+            "AttributeBar": {
+              "useJson": true
+            },
+            "Back": {
+              "useJson": true
+            }
+          }
+        }
+      },
+      "3120fc9e-79ba-4509-b037-9a4367d7103f": {
+        "position": {
+          "x": 1270.4,
+          "y": 46.4
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "ENTER BACKEND INTEGRATION SMS LAMBDA"
+          }
+        },
+        "dynamicMetadata": {
+          "destination": false,
+          "formData": false,
+          "customerFullName": false
+        }
+      },
+      "2dc39c9b-0218-45da-929b-44f72e383eb8": {
+        "position": {
+          "x": 1706.4,
+          "y": 295.2
+        },
+        "dynamicParams": []
+      },
+      "351bff85-af90-4579-addd-b2b69e7c2859": {
+        "position": {
+          "x": 1928,
+          "y": 56.8
+        },
+        "dynamicParams": []
+      },
+      "0300ab36-0d5f-4b7b-9d7f-7ddc95433b29": {
+        "position": {
+          "x": 1482.4,
+          "y": 49.6
+        },
+        "dynamicParams": []
+      },
+      "2eb3754c-8edf-496e-891f-4cb26270e68e": {
+        "position": {
+          "x": 1293.6,
+          "y": 292
+        },
+        "dynamicParams": []
+      },
+      "58c1a435-ead8-49eb-b38e-35a05640952d": {
+        "position": {
+          "x": 1710.4,
+          "y": 49.6
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "ENTER BACKEND INTEGRATION SES LAMBDA"
+          }
+        },
+        "dynamicMetadata": {
+          "formData": false,
+          "systemEmail": false,
+          "destinationEmail": false,
+          "customerFullName": false
+        }
+      }
+    },
+    "name": "SBSGuides_Example_BackendIntegration",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "9118e2fb-c62f-4c29-9eff-e93da91cac29",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "35f6935a-b3f2-4b29-90f2-6cd2998da07b"
+      }
+    },
+    {
+      "Parameters": {
+        "ProfileRequestData": {
+          "PhoneNumber": "+642108895745"
+        },
+        "ProfileResponseData": [
+          "FirstName",
+          "LastName",
+          "PhoneNumber",
+          "EmailAddress",
+          "Address1",
+          "City",
+          "Country",
+          "PostalCode",
+          "State"
+        ]
+      },
+      "Identifier": "35f6935a-b3f2-4b29-90f2-6cd2998da07b",
+      "Type": "GetCustomerProfile",
+      "Transitions": {
+        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+        "Errors": [
+          {
+            "NextAction": "09e52458-e5f0-44e2-b792-f91357219202",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "09e52458-e5f0-44e2-b792-f91357219202",
+            "ErrorType": "MultipleFoundError"
+          },
+          {
+            "NextAction": "09e52458-e5f0-44e2-b792-f91357219202",
+            "ErrorType": "NoneFoundError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ProfileRequestData": {
+          "FirstName": "Sample",
+          "LastName": "Customer",
+          "PhoneNumber": "+11111111111"
+        },
+        "ProfileResponseData": [
+          "FirstName",
+          "LastName",
+          "PhoneNumber"
+        ]
+      },
+      "Identifier": "09e52458-e5f0-44e2-b792-f91357219202",
+      "Type": "CreateCustomerProfile",
+      "Transitions": {
+        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+        "Errors": [
+          {
+            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "CustomerFullName": "$.Customer.FirstName $.Customer.LastName",
+          "callType": "Cards with actions"
+        }
+      },
+      "Identifier": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+        "Errors": [
+          {
+            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "61f4731f-eabe-4d1d-835c-a35956299244",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "actionName": "$.Views.ViewResultData.actionName"
+        }
+      },
+      "Identifier": "dde23aa2-75f5-4d02-b08c-14f44fa43b4d",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "2c383a61-44af-4cac-90e3-e68383c807e5",
+        "Errors": [
+          {
+            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "cards",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "18000",
+        "ViewData": {
+          "Heading": "\"A view with cards and actions\"",
+          "AttributeBar": [
+            {
+              "Label": "Call",
+              "Value": "$.Attributes.callType"
+            },
+            {
+              "Label": "Link",
+              "Value": "External System",
+              "LinkType": "external",
+              "Url": "<link to an external website>"
+            }
+          ],
+          "Back": {
+            "Label": "Back"
+          },
+          "NoMatchFound": {
+            "Label": "No match found ?"
+          },
+          "Cards": [
+            {
+              "Summary": {
+                "Id": "card1",
+                "Icon": "Book Open",
+                "Heading": "Card 1"
+              },
+              "Detail": {
+                "Heading": "Card 1",
+                "Sections": [
+                  {
+                    "TemplateString": "<TextContent><p>See Card 2 for actions</p></TextContent>"
+                  }
+                ]
+              }
+            },
+            {
+              "Summary": {
+                "Id": "card 2",
+                "Icon": "Pencil Holder",
+                "Heading": "Card 2"
+              },
+              "Detail": {
+                "Heading": "Card 2",
+                "Sections": [
+                  {
+                    "TemplateString": "<TextContent>Clicking on either action will open a Form view.</TextContent>"
+                  }
+                ],
+                "Actions": [
+                  "Action 1",
+                  "Action 2"
+                ]
+              }
+            },
+            {
+              "Summary": {
+                "Id": "card3",
+                "Icon": "Chat",
+                "Heading": "Card 3"
+              },
+              "Detail": {
+                "Heading": "Card 3",
+                "Sections": [
+                  {
+                    "TemplateString": "<TextContent>No details.</TextContent>"
+                  }
+                ]
+              }
+            },
+            {
+              "Summary": {
+                "Id": "card4",
+                "Icon": "Cash",
+                "Heading": "Card 4"
+              },
+              "Detail": {
+                "Heading": "Card 4",
+                "Sections": {
+                  "TemplateString": "<TextContent>No details.</TextContent>"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "Identifier": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+        "Conditions": [
+          {
+            "NextAction": "dde23aa2-75f5-4d02-b08c-14f44fa43b4d",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "ActionSelected"
+              ]
+            }
+          },
+          {
+            "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          },
+          {
+            "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "NoMatchFound"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "confirmation",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "\"Message sent!\"",
+          "AttributeBar": [
+            {
+              "Label": "Call",
+              "Value": "$.Attributes.callType"
+            },
+            {
+              "Label": "Link",
+              "Value": "External System",
+              "LinkType": "external",
+              "Url": "<link to an external website>"
+            }
+          ],
+          "Graphic": "{\"Include\": true}",
+          "Next": "{\"Label\":\"Close this workflow\"}",
+          "SubHeading": "Lambda results: SendEmail -> $.Attributes.SendEmailResponse    SendSNS-> $.Attributes.SendSMSResponse. If you see an error check the relevant function logs to troubleshoot."
+        }
+      },
+      "Identifier": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+        "Conditions": [
+          {
+            "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Next"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "11e0ea4b-5502-4849-b966-b0dc6d6ad789",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "formWithSteps",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "18000",
+        "ViewData": {
+          "Heading": "\"$.Attributes.actionName\"",
+          "AttributeBar": [
+            {
+              "Label": "Call",
+              "Value": "$.Attributes.callType"
+            },
+            {
+              "Label": "Link",
+              "Value": "External System",
+              "LinkType": "external",
+              "Url": "<link to an external website>"
+            }
+          ],
+          "Sections": "[     {         \"Heading\": \"Customer Information\",         \"Type\": \"DataSection\",         \"IsEditable\": false,         \"Configuration\":         {},         \"Items\":         [             {                 \"AutoOpen\": false,                 \"Label\": \"Customer Name\",                 \"Value\": \"$.Customer.FirstName $.Customer.LastName\",                 \"Copyable\": false             },             {                 \"AutoOpen\": false,                 \"Label\": \"Phone Number\",                 \"Value\": \"$.Customer.PhoneNumber\",                 \"Copyable\": false             },             {                 \"AutoOpen\": false,                 \"Label\": \"Email\",                 \"Value\": \"$.Customer.EmailAddress\",                 \"Copyable\": false             }         ]     },     {         \"Heading\": \"Details\",         \"Type\": \"FormSection\",         \"IsEditable\": false,         \"Configuration\":         {},         \"Items\":         [             {                 \"Type\": \"DatePicker\",                 \"Required\": false,                 \"Fluid\": true,                 \"Label\": \"Appointment date\",                 \"Name\": \"appt-day\",                 \"MultiSelect\": false             },             {                 \"Type\": \"TimePicker\",                 \"Required\": false,                 \"Fluid\": true,                 \"Label\": \"Time\",                 \"Name\": \"appt-time\",                 \"MultiSelect\": false             },             {                 \"Required\": false,                 \"Fluid\": false,                 \"MultiSelect\": false,                 \"Type\": \"TextArea\",                 \"Name\": \"message-details\",                 \"DefaultValue\": \"\",                 \"Label\": \"Message details\"             }         ]     } ]",
+          "Back": {
+            "Label": "Back"
+          }
+        }
+      },
+      "Identifier": "2c383a61-44af-4cac-90e3-e68383c807e5",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+        "Conditions": [
+          {
+            "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          },
+          {
+            "NextAction": "3120fc9e-79ba-4509-b037-9a4367d7103f",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Next"
+              ]
+            }
+          },
+          {
+            "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Step"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "dffdf5f8-04f2-4880-a6dc-b18fbddf61f7",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "ENTER BACKEND INTEGRATION SMS LAMBDA",
+        "InvocationTimeLimitSeconds": "6",
+        "LambdaInvocationAttributes": {
+          "destination": "VALID PHONE NUMBER IN E.164 FORMAT",
+          "formData": "$.Views.ViewResultData.FormData",
+          "customerFullName": "$.Attributes.CustomerFullName"
+        },
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "3120fc9e-79ba-4509-b037-9a4367d7103f",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "0300ab36-0d5f-4b7b-9d7f-7ddc95433b29",
+        "Errors": [
+          {
+            "NextAction": "2eb3754c-8edf-496e-891f-4cb26270e68e",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "SendEmailResponse": "Failed"
+        }
+      },
+      "Identifier": "2dc39c9b-0218-45da-929b-44f72e383eb8",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+        "Errors": [
+          {
+            "NextAction": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "SendEmailResponse": "Success"
+        }
+      },
+      "Identifier": "351bff85-af90-4579-addd-b2b69e7c2859",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+        "Errors": [
+          {
+            "NextAction": "1d7356ff-54b4-4293-9204-b19c2b39c7e4",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "SendSMSResponse": "Success"
+        }
+      },
+      "Identifier": "0300ab36-0d5f-4b7b-9d7f-7ddc95433b29",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "58c1a435-ead8-49eb-b38e-35a05640952d",
+        "Errors": [
+          {
+            "NextAction": "58c1a435-ead8-49eb-b38e-35a05640952d",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "SendSMSResponse": "Failed"
+        }
+      },
+      "Identifier": "2eb3754c-8edf-496e-891f-4cb26270e68e",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "58c1a435-ead8-49eb-b38e-35a05640952d",
+        "Errors": [
+          {
+            "NextAction": "58c1a435-ead8-49eb-b38e-35a05640952d",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "ENTER BACKEND INTEGRATION SES LAMBDA",
+        "InvocationTimeLimitSeconds": "6",
+        "LambdaInvocationAttributes": {
+          "formData": "$.Views.ViewResultData.FormData",
+          "systemEmail": "ENTER VALID SES IDENTITY EMAIL ADDRESS",
+          "destinationEmail": "ENTER RECEIVING EMAIL ADDRESS",
+          "customerFullName": "$.Attributes.CustomerFullName"
+        },
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "58c1a435-ead8-49eb-b38e-35a05640952d",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "351bff85-af90-4579-addd-b2b69e7c2859",
+        "Errors": [
+          {
+            "NextAction": "2dc39c9b-0218-45da-929b-44f72e383eb8",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}
