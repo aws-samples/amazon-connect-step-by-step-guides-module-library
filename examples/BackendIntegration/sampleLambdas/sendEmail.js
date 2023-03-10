@@ -4,10 +4,12 @@ export const handler = async (event, context, callback) => {
 
     const sesClient = new SESClient();
     
-    const dataFromForm = event.Details.Parameters.formData;
+    const dataFromForm = event.Details.Parameters.formData;    
+    const customerName = event.Details.Parameters.customerFullName;
+    console.log(dataFromForm);
 
     const messageBodyHTML = 
-        `<p>Message: ${event.Details.Attributes.CustomerFullName}</p>
+        `<p>Message: ${customerName}</p>
         
         <h4>Message from SBSGuides</h4>
         <ul>
@@ -16,7 +18,7 @@ export const handler = async (event, context, callback) => {
           <li>Details: ${dataFromForm['message-details']}</li>
         </ul>`;
         
-    const messageBody = `Message from SBSGuides. ${event.Details.Attributes.CustomerFullName}, with data 'date': ${dataFromForm['appt-day']}, 'time': ${dataFromForm['appt-time']}, and 'details':${dataFromForm['message-details']}`;
+    const messageBody = `Message from SBSGuides. ${customerName}, with data 'date': ${dataFromForm['appt-day']}, 'time': ${dataFromForm['appt-time']}, and 'details':${dataFromForm['message-details']}`;
     
     const sendEmailCommand = new SendEmailCommand({
       Destination: { /* required */
@@ -44,12 +46,13 @@ export const handler = async (event, context, callback) => {
     });
     
     try {
-      return await sesClient.send(sendEmailCommand);
+      const response = await sesClient.send(sendEmailCommand);
+      return {"status": 200}
       
     } catch (e) {
       
       console.error("Failed to send email.");
       console.log(e);
-      return e;
+      return {"status": 500}
     }
 };
