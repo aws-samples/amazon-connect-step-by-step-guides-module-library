@@ -16,10 +16,7 @@ This library is designed specifically for Amazon Connect contact center administ
 - Working knowledge of the JSON object format. To learn more see [this tutorial](https://www.w3schools.com/js/js_json_intro.asp).
 
 ## What is in the library?
-This library is divided into three parts: components, flows, and examples.
-
-### Components
-Within the Components folder are subfolders for commonly used components, such as dropdown lists and textboxes, used within step-by-step guides. Each subfolder consists of a `template.json` meant to serve as a starting point for using the component within your guides and a `README.md` which provides details about what the component is, the various properties available, and how to use that component within your guides.
+This library is divided into two parts: modules, and examples.
 
 ### Modules
 Within the Modules folder are subfolders for commonly used patterns that will appear in your contact flows when using step-by-step guides, such as initiating a step-by-step guide and using step-by-step guides with Customer Profiles. Each subfolder consists of a `contactFlow.json` which can be imported into your Amazon Connect instance to see how the pattern is implemented. There is also a `README.md` which provides details about the pattern, why we want to use this pattern, how to use the pattern within the context of a larger contact flow, and other relevant information pertaining to the pattern.

@@ -14,18 +14,16 @@
 export const handler = async(event) => {
   console.log("EVENT",event)
   const dataFromViews = event.Details.Parameters.dataFromViews;
-  const formData = JSON.parse(dataFromViews.ViewResultData).ActionOutput.formData;
+  const formData = JSON.parse(dataFromViews.ViewResultData).FormData;
   console.log("dataFromViews: ", dataFromViews)
   console.log("form data: ", formData);
   
   const simplifiedFormData = {
-      'PolicyID': formData.policyID,
-      'Incident': formData.incident[0],
-      'Location': formData.location[0],
+      'PolicyID': formData.policyId,
+      'Incident': formData.incident['0'],
+      'Location': formData.location['0'],
       'Date': formData.date,
-      'LocationOfDamage': formData.locationOfDamage[0],
-      'OnPolicy': formData.onPolicy,
-      'Expedited': formData.expedited
+      'LocationOfDamage': formData.locationOfDamage['0'],
   }
   
   return simplifiedFormData
