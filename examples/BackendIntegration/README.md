@@ -23,7 +23,7 @@ This example uses several Amazon Connect features that are not enabled by defaul
     1. Download the [sendEmail.js](./sampleLambdas/sendEmail.js) and [sendSMS.js](./sampleLambdas/sendSMS.js) files in the sampleLambdas folder
     1. Create a new AWS Lambda function for NodeJS using the code from sendEmail.js. See instructions on [creating an AWS Lambda function](https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html).
     1. Navigate to the AWS Lambda function's [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html) by choosing **Configuration** > **Permissions** and clicking the link for the **Role name**. This will open up the IAM manager tab.
-    1. [Attach an inline policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console) to your AWS Lambda role based on the below example. **IMPORTANT: the policy below is meant as an example. Any wildcard (*) attributes should be changed to a specific ARN in order to follow the [principle of least privilege](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)**
+    1. [Attach an inline policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console) to your AWS Lambda role based on the below example. **IMPORTANT: the policy below is meant as an example. Always reference specific ARNs and follow the [principle of least privilege](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)**
     ```
      {
         "Version": "2012-10-17",
@@ -32,15 +32,15 @@ This example uses several Amazon Connect features that are not enabled by defaul
                 "Effect": "Allow",
                 "Action": "ses:SendEmail",
                 "Resource": [
-                    "arn:aws:ses:*:[AWS ACCOUNT ID]:template/*",
-                    "arn:aws:ses:*:[AWS ACCOUNT ID]:identity/*",
-                    "arn:aws:ses:*:[AWS ACCOUNT ID]:configuration-set/*"
+                    "arn:aws:ses:[REGION]:[AWS ACCOUNT ID]:template/[IDENTITY NAME]",
+                    "arn:aws:ses:[REGION]:[AWS ACCOUNT ID]:identity/[IDENTITY NAME]",
+                    "arn:aws:ses:[REGION]:[AWS ACCOUNT ID]:configuration-set/[IDENTITY NAME]"
                 ]
             }
         ]
     }
     ```
-    5. Repeat step 2 through 4 for the second Lambda function using sendSMS.js file and the following in-line policy example. **IMPORTANT: the policy below is meant as an example. Any wildcard (*) attributes should be changed to a specific ARN in order to follow the [principle of least privilege](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)**
+    5. Repeat step 2 through 4 for the second Lambda function using sendSMS.js file and the following in-line policy example. **IMPORTANT: the policy below is meant as an example. Always reference specific ARNs and follow the [principle of least privilege](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)**
     ```
     {
         "Version": "2012-10-17",
@@ -48,12 +48,7 @@ This example uses several Amazon Connect features that are not enabled by defaul
             {
                 "Effect": "Allow",
                 "Action": "sns:Publish",
-                "Resource": "arn:aws:sns:*:[AWS ACCOUNT ID]:*"
-            },
-            {
-                "Effect": "Allow",
-                "Action": "sns:SetSMSAttributes",
-                "Resource": "*"
+                "Resource": "arn:aws:sns:[REGION]:[AWS ACCOUNT ID]:[TOPIC NAME]"
             }
         ]
     }
