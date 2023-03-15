@@ -1,0 +1,104 @@
+{
+    "Version": "2019-10-30",
+    "StartAction": "9118e2fb-c62f-4c29-9eff-e93da91cac29",
+    "Metadata": {
+        "entryPointPosition": { "x": 40, "y": 40 },
+        "ActionMetadata": {
+            "9118e2fb-c62f-4c29-9eff-e93da91cac29": { "position": { "x": 156, "y": 20.8 } },
+            "61f4731f-eabe-4d1d-835c-a35956299244": { "position": { "x": 1536.8, "y": 311.2 } },
+            "032fdba4-bfbd-44b0-9cc4-137dbe7716cd": { "position": { "x": 401.6, "y": 12 }, "dynamicParams": [] },
+            "2c383a61-44af-4cac-90e3-e68383c807e5": {
+                "position": { "x": 686.4, "y": 24 },
+                "parameters": {
+                    "ViewResource": { "Id": { "displayName": "Detail" } },
+                    "InvocationTimeLimitSeconds": { "unit": 1 },
+                    "ViewData": {
+                        "Sections": { "useJson": true },
+                        "AttributeBar": { "useJson": true },
+                        "Actions": { "useJson": true },
+                        "Back": { "useJson": true }
+                    }
+                }
+            }
+        },
+        "name": "SBSGuides_Example_Contact_Attributes_And_Styling_Guide",
+        "description": "",
+        "type": "contactFlow",
+        "status": "published",
+        "hash": {}
+    },
+    "Actions": [
+        {
+            "Parameters": { "FlowLoggingBehavior": "Enabled" },
+            "Identifier": "9118e2fb-c62f-4c29-9eff-e93da91cac29",
+            "Type": "UpdateFlowLoggingBehavior",
+            "Transitions": { "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd" }
+        },
+        {
+            "Parameters": {},
+            "Identifier": "61f4731f-eabe-4d1d-835c-a35956299244",
+            "Type": "DisconnectParticipant",
+            "Transitions": {}
+        },
+        {
+            "Parameters": {
+                "Attributes": {
+                    "CustomerFullName": "Sample Contact",
+                    "IVRResponse": "Lost luggage",
+                    "CaseID": "12345",
+                    "AgentName": "Sample Agent"
+                }
+            },
+            "Identifier": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+            "Type": "UpdateContactAttributes",
+            "Transitions": {
+                "NextAction": "2c383a61-44af-4cac-90e3-e68383c807e5",
+                "Errors": [{ "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244", "ErrorType": "NoMatchingError" }]
+            }
+        },
+        {
+            "Parameters": {
+                "ViewResource": { "Id": "detail", "Version": "Latest" },
+                "InvocationTimeLimitSeconds": "300",
+                "ViewData": {
+                    "Heading": "Contact attributes and styling",
+                    "Description": "Example use case",
+                    "Sections": [
+                        {
+                            "TemplateString": "<p style='font-style: italic;'>This example demonstrates how to:</p><ul><li>display contact attributes in your views</li><li>use simple HTML to apply styling</li></ul>"
+                        },
+                        {
+                            "TemplateString": "<h3>Contact attributes:</h3><p>You can access the contact attributes within the view by using the regular <span style='font-family: Courier New;'>JSONPath</span>, just as you would in regular flows.</p><p>The following data is displayed through contact attributes:</p><ul><li>$.Attributes.CustomerFullName</li><li>$.Attributes.CaseID</li></ul>"
+                        },
+                        {
+                            "TemplateString": "<h3>Styling:</h3><p>Using regular HTML tags, you can design your views for your use case. This block is rendered in a &lt;p&gt; tag, whereas the title above is a &lt;h3&gt;. You can find more about Step-By-Step Guides <a href='https://aws.amazon.com/about-aws/whats-new/2022/11/amazon-connect-step-by-step-guides-agent-workspace-preview/' target='_blank'>here</a> (this is an &lt;a&gt; tag).</p><p>Inline styling can be used to add more visually appealing features to your views, such as:</p><ul><li style='color: green;'>coloring</li><li style='font-weight:700'>font weight adjustment</li><li style='font-style:italic'>font styling</li></ul>"
+                        }
+                    ],
+                    "AttributeBar": [],
+                    "Actions": [],
+                    "Back": { "Label": "Back" }
+                }
+            },
+            "Identifier": "2c383a61-44af-4cac-90e3-e68383c807e5",
+            "Type": "ShowView",
+            "Transitions": {
+                "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244",
+                "Conditions": [
+                    {
+                        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+                        "Condition": { "Operator": "Equals", "Operands": ["ActionSelected"] }
+                    },
+                    {
+                        "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd",
+                        "Condition": { "Operator": "Equals", "Operands": ["Back"] }
+                    }
+                ],
+                "Errors": [
+                    { "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244", "ErrorType": "NoMatchingCondition" },
+                    { "NextAction": "61f4731f-eabe-4d1d-835c-a35956299244", "ErrorType": "NoMatchingError" },
+                    { "NextAction": "032fdba4-bfbd-44b0-9cc4-137dbe7716cd", "ErrorType": "TimeLimitExceeded" }
+                ]
+            }
+        }
+    ]
+}
