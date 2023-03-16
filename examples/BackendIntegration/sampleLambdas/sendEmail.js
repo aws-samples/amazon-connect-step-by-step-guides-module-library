@@ -1,3 +1,8 @@
+/*!
+  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  SPDX-License-Identifier: MIT-0
+*/
+
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
 export const handler = async (event, context, callback) => {
