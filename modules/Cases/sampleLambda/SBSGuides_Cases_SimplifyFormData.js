@@ -1,4 +1,7 @@
-/*
+/*!
+  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  SPDX-License-Identifier: MIT-0
+
   This Lambda serves as an example for how we can pass data from a SBSGuides View
   to AWS Lambda in order to process and simplify form data to be referenceable in
   a contact flow
