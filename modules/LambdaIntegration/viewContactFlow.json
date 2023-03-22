@@ -1,0 +1,312 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "48ea2035-e314-4043-9237-6725a98e887e",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "48ea2035-e314-4043-9237-6725a98e887e": {
+        "position": {
+          "x": 152.8,
+          "y": 21.6
+        }
+      },
+      "be74f2dc-1264-4fe3-a452-539c2dd5190f": {
+        "position": {
+          "x": 380.8,
+          "y": 23.200000000000003
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "SELECT LAMBDA TO VIEW HERE"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "67825a87-7fae-417e-b428-21312c569130": {
+        "position": {
+          "x": 618.4000000000001,
+          "y": 21.6
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Detail"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "Sections": {
+              "useJson": true
+            },
+            "Actions": {
+              "useJson": true
+            },
+            "Style": {
+              "useJson": true
+            }
+          }
+        }
+      },
+      "93a41068-a0aa-4cb2-9497-f46fbb83e382": {
+        "position": {
+          "x": 1633.6000000000001,
+          "y": 358.40000000000003
+        }
+      },
+      "4103ec8f-2cec-43c5-80da-0c3a7fa766fc": {
+        "position": {
+          "x": 1384.8000000000002,
+          "y": -16.8
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "SELECT LAMBDA FROM VIEW HERE"
+          }
+        },
+        "dynamicMetadata": {
+          "dataFromViews": false
+        }
+      },
+      "d10cbe4e-67e6-4b5c-a308-63efa050baa7": {
+        "position": {
+          "x": 843.2,
+          "y": 0
+        },
+        "dynamicParams": []
+      },
+      "26445d6b-5e6c-4f43-a611-a3d12b3fbe78": {
+        "position": {
+          "x": 1076,
+          "y": -0.8
+        },
+        "conditionMetadata": [
+          {
+            "id": "239ea559-d1bd-4047-9a32-bf218241f2ae",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "Refresh view"
+          },
+          {
+            "id": "a6e0d025-9676-4998-b9b9-c06f246d6d3d",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "Invoke Lambda function"
+          }
+        ]
+      }
+    },
+    "name": "SBSGuides_lambda_module",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "48ea2035-e314-4043-9237-6725a98e887e",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "be74f2dc-1264-4fe3-a452-539c2dd5190f"
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "SELECT LAMBDA TO VIEW",
+        "InvocationTimeLimitSeconds": "3",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "be74f2dc-1264-4fe3-a452-539c2dd5190f",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "67825a87-7fae-417e-b428-21312c569130",
+        "Errors": [
+          {
+            "NextAction": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "detail",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Sample Lambda Integration Module",
+          "Description": "This view is showing data returned by a Lambda function",
+          "Sections": [
+            {
+              "Columns": "4",
+              "Items": [
+                {
+                  "Label": "Date",
+                  "Value": "$.External.Date"
+                },
+                {
+                  "Label": "Policy Number",
+                  "Value": "$.External.PolicyNumber"
+                },
+                {
+                  "Label": "Customer Name",
+                  "Value": "$.External.CustomerName"
+                },
+                {
+                  "Label": "Message from Lambda",
+                  "Value": "$.External.CustomMessage"
+                }
+              ]
+            }
+          ],
+          "Actions": [
+            "Invoke Lambda function",
+            "Refresh view"
+          ],
+          "Style": {
+            "Label": "Back"
+          }
+        }
+      },
+      "Identifier": "67825a87-7fae-417e-b428-21312c569130",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+        "Conditions": [
+          {
+            "NextAction": "d10cbe4e-67e6-4b5c-a308-63efa050baa7",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "ActionSelected"
+              ]
+            }
+          },
+          {
+            "NextAction": "be74f2dc-1264-4fe3-a452-539c2dd5190f",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "SELECT LAMBDA FROM VIEW",
+        "InvocationTimeLimitSeconds": "3",
+        "LambdaInvocationAttributes": {
+          "dataFromViews": "$.Views"
+        },
+        "ResponseValidation": {
+          "ResponseType": "JSON"
+        }
+      },
+      "Identifier": "4103ec8f-2cec-43c5-80da-0c3a7fa766fc",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "be74f2dc-1264-4fe3-a452-539c2dd5190f",
+        "Errors": [
+          {
+            "NextAction": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "actionName": "$.Views.ViewResultData.actionName"
+        }
+      },
+      "Identifier": "d10cbe4e-67e6-4b5c-a308-63efa050baa7",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "26445d6b-5e6c-4f43-a611-a3d12b3fbe78",
+        "Errors": [
+          {
+            "NextAction": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.actionName"
+      },
+      "Identifier": "26445d6b-5e6c-4f43-a611-a3d12b3fbe78",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+        "Conditions": [
+          {
+            "NextAction": "be74f2dc-1264-4fe3-a452-539c2dd5190f",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Refresh view"
+              ]
+            }
+          },
+          {
+            "NextAction": "4103ec8f-2cec-43c5-80da-0c3a7fa766fc",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Invoke Lambda function"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "93a41068-a0aa-4cb2-9497-f46fbb83e382",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    }
+  ]
+}
