@@ -1,0 +1,140 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "79c6c70b-1c47-4cd1-aa48-f5037ca96483",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "79c6c70b-1c47-4cd1-aa48-f5037ca96483": {
+        "position": {
+          "x": 152.8,
+          "y": 38.400000000000006
+        }
+      },
+      "b25e0498-7800-4eb1-8374-aa30216a8540": {
+        "position": {
+          "x": 680,
+          "y": 48.800000000000004
+        }
+      },
+      "de498342-3070-4163-a4a6-27d0a286236d": {
+        "position": {
+          "x": 394.40000000000003,
+          "y": 39.2
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Detail"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "Sections": {
+              "useJson": true
+            }
+          }
+        }
+      }
+    },
+    "name": "SBSGuides_Module_Task_Receive",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "79c6c70b-1c47-4cd1-aa48-f5037ca96483",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "de498342-3070-4163-a4a6-27d0a286236d"
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "b25e0498-7800-4eb1-8374-aa30216a8540",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "detail",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Current Task Data",
+          "Description": "Here is a display of the current task",
+          "Sections": [
+            {
+              "Columns": "4",
+              "Items": [
+                {
+                  "Label": "Sample data 1",
+                  "Value": "$.Attributes.SampleData1"
+                },
+                {
+                  "Label": "Sample data 2",
+                  "Value": "$.Attributes.SampleData2"
+                },
+                {
+                  "Label": "Default Flow for Agent UI",
+                  "Value": "$.Attributes.DefaultFlowForAgentUI"
+                }
+              ]
+            }
+          ],
+          "Back": "Back"
+        }
+      },
+      "Identifier": "de498342-3070-4163-a4a6-27d0a286236d",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "b25e0498-7800-4eb1-8374-aa30216a8540",
+        "Conditions": [
+          {
+            "NextAction": "79c6c70b-1c47-4cd1-aa48-f5037ca96483",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "ActionSelected"
+              ]
+            }
+          },
+          {
+            "NextAction": "79c6c70b-1c47-4cd1-aa48-f5037ca96483",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "b25e0498-7800-4eb1-8374-aa30216a8540",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "b25e0498-7800-4eb1-8374-aa30216a8540",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "b25e0498-7800-4eb1-8374-aa30216a8540",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    }
+  ]
+}
