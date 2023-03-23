@@ -1,0 +1,458 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "4146a2ca-c073-4356-b417-0a44c6503b07",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "4146a2ca-c073-4356-b417-0a44c6503b07": {
+        "position": {
+          "x": 146.4,
+          "y": 45.6
+        }
+      },
+      "9d08d3dd-93f5-4717-9bc8-83083514a2c6": {
+        "position": {
+          "x": 899.2,
+          "y": 376
+        }
+      },
+      "acde1c0e-b342-40fa-87d3-a2ea654d7297": {
+        "position": {
+          "x": 665.6,
+          "y": 380.8
+        },
+        "parameters": {
+          "AgentId": {
+            "displayName": "ENTER AGENT NAME"
+          }
+        },
+        "queue": {
+          "text": "ENTER AGENT NAME"
+        }
+      },
+      "8e1f8602-6185-4bce-94a4-f4acc56248a1": {
+        "position": {
+          "x": 1216.8,
+          "y": 337.6
+        }
+      },
+      "324f6360-c2c8-485c-a72f-e9f2ba9f72fe": {
+        "position": {
+          "x": 1274.4,
+          "y": 61.6
+        },
+        "parameters": {
+          "ContactFlowId": {
+            "displayName": "SBSGuides_Example_CreateAndReviewTasks"
+          }
+        },
+        "ContactFlow": {
+          "text": "SBSGuides_Example_CreateAndReviewTasks"
+        }
+      },
+      "6ebc3eb5-72d0-4683-908a-cf8f01906fc9": {
+        "position": {
+          "x": 381.6,
+          "y": 47.2
+        },
+        "conditionMetadata": [
+          {
+            "id": "afad31f0-fc94-4228-bc10-c485d4eae199",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "TASK"
+          }
+        ]
+      },
+      "c12c844c-90e1-49b1-ab35-6afa4d8a71a0": {
+        "position": {
+          "x": 948,
+          "y": 56
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "SELECT SIMPLIFY FORM DATA LAMBDA"
+          }
+        },
+        "dynamicMetadata": {
+          "dataFromViews": false
+        }
+      },
+      "5d2253fd-ac53-41ef-bf1b-16e2781f8aec": {
+        "position": {
+          "x": 1969.6000000000001,
+          "y": 145.6
+        }
+      },
+      "e790317f-d330-4cd6-a489-49bd969eea0e": {
+        "position": {
+          "x": 1504.8000000000002,
+          "y": 52.800000000000004
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Confirmation"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          }
+        }
+      },
+      "1224f589-5078-4f36-9ddc-7ff42d80f6d9": {
+        "position": {
+          "x": 680,
+          "y": 31.200000000000003
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Form"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "Sections": {
+              "useJson": true
+            }
+          }
+        }
+      }
+    },
+    "name": "SBSGuides_Example_CreateAndReviewTasks_Create",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "4146a2ca-c073-4356-b417-0a44c6503b07",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "6ebc3eb5-72d0-4683-908a-cf8f01906fc9"
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "9d08d3dd-93f5-4717-9bc8-83083514a2c6",
+      "Type": "TransferContactToQueue",
+      "Transitions": {
+        "NextAction": "8e1f8602-6185-4bce-94a4-f4acc56248a1",
+        "Errors": [
+          {
+            "NextAction": "8e1f8602-6185-4bce-94a4-f4acc56248a1",
+            "ErrorType": "QueueAtCapacity"
+          },
+          {
+            "NextAction": "8e1f8602-6185-4bce-94a4-f4acc56248a1",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "AgentId": "ENTER AGENT NAME"
+      },
+      "Identifier": "acde1c0e-b342-40fa-87d3-a2ea654d7297",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "9d08d3dd-93f5-4717-9bc8-83083514a2c6",
+        "Errors": [
+          {
+            "NextAction": "8e1f8602-6185-4bce-94a4-f4acc56248a1",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "8e1f8602-6185-4bce-94a4-f4acc56248a1",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Name": "Sample Task",
+        "ContactFlowId": "SELECT CONTACT FLOW",
+        "Description": "This is an example task that can trigger a SBSGuide",
+        "Attributes": {
+          "Date": "$.External.date",
+          "Time": "$.External.time",
+          "Summary": "$.External.summary",
+          "CustomerType": "$.External.customer",
+          "Priority": "$.External.priority",
+          "DefaultFlowForAgentUI": "ENTER REVIEW TASK CONTACT FLOW ID"
+        }
+      },
+      "Identifier": "324f6360-c2c8-485c-a72f-e9f2ba9f72fe",
+      "Type": "CreateTask",
+      "Transitions": {
+        "NextAction": "e790317f-d330-4cd6-a489-49bd969eea0e",
+        "Errors": [
+          {
+            "NextAction": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Channel"
+      },
+      "Identifier": "6ebc3eb5-72d0-4683-908a-cf8f01906fc9",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "1224f589-5078-4f36-9ddc-7ff42d80f6d9",
+        "Conditions": [
+          {
+            "NextAction": "acde1c0e-b342-40fa-87d3-a2ea654d7297",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "TASK"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "1224f589-5078-4f36-9ddc-7ff42d80f6d9",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "SELECT SIMPLIFY FORM DATA LAMBDA",
+        "InvocationTimeLimitSeconds": "3",
+        "LambdaInvocationAttributes": {
+          "dataFromViews": "$.Views"
+        },
+        "ResponseValidation": {
+          "ResponseType": "JSON"
+        }
+      },
+      "Identifier": "c12c844c-90e1-49b1-ab35-6afa4d8a71a0",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "324f6360-c2c8-485c-a72f-e9f2ba9f72fe",
+        "Errors": [
+          {
+            "NextAction": "8e1f8602-6185-4bce-94a4-f4acc56248a1",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "confirmation",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Task from form created successfully",
+          "Next": "Create another task?",
+          "SubHeading": "Your task has been submitted for review!"
+        }
+      },
+      "Identifier": "e790317f-d330-4cd6-a489-49bd969eea0e",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+        "Conditions": [
+          {
+            "NextAction": "1224f589-5078-4f36-9ddc-7ff42d80f6d9",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Next"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "form",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Task Form",
+          "Sections": [
+            {
+              "Heading": "Task Information",
+              "IsEditable": false,
+              "Configuration": {},
+              "Items": [
+                {
+                  "Type": "DatePicker",
+                  "Required": false,
+                  "Fluid": true,
+                  "Label": "Date",
+                  "Name": "date",
+                  "MultiSelect": false
+                },
+                {
+                  "DefaultValue": "",
+                  "Type": "TimePicker",
+                  "Required": false,
+                  "Fluid": true,
+                  "Label": "Time",
+                  "Name": "time",
+                  "MultiSelect": false
+                },
+                {
+                  "Type": "TextArea",
+                  "Required": false,
+                  "Fluid": false,
+                  "Label": "Task summary",
+                  "Name": "summary",
+                  "MultiSelect": false
+                },
+                {
+                  "Type": "Dropdown",
+                  "Required": false,
+                  "Fluid": false,
+                  "Label": "Customer Type",
+                  "Name": "customer",
+                  "Options": [
+                    {
+                      "Value": "New Customer",
+                      "Label": "New Customer"
+                    },
+                    {
+                      "Value": "Returning Customer",
+                      "Label": "Returning Customer"
+                    },
+                    {
+                      "Value": "Potential Lead",
+                      "Label": "Potential Lead"
+                    },
+                    {
+                      "Value": "Previous Customer",
+                      "Label": "Previous Customer"
+                    }
+                  ],
+                  "MultiSelect": false
+                },
+                {
+                  "Type": "RadioGroup",
+                  "Required": false,
+                  "Fluid": true,
+                  "Label": "Is this a priority?",
+                  "Name": "priority",
+                  "Options": [
+                    {
+                      "Value": "yes",
+                      "Label": "Yes"
+                    },
+                    {
+                      "Value": "no",
+                      "Label": "No"
+                    }
+                  ],
+                  "MultiSelect": false
+                }
+              ],
+              "Type": "FormSection"
+            }
+          ],
+          "Cancel": "Cancel",
+          "Next": "Create Task",
+          "Back": "Back",
+          "SubHeading": "Create a task"
+        }
+      },
+      "Identifier": "1224f589-5078-4f36-9ddc-7ff42d80f6d9",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+        "Conditions": [
+          {
+            "NextAction": "6ebc3eb5-72d0-4683-908a-cf8f01906fc9",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          },
+          {
+            "NextAction": "c12c844c-90e1-49b1-ab35-6afa4d8a71a0",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Next"
+              ]
+            }
+          },
+          {
+            "NextAction": "c12c844c-90e1-49b1-ab35-6afa4d8a71a0",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Step"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "5d2253fd-ac53-41ef-bf1b-16e2781f8aec",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    }
+  ]
+}

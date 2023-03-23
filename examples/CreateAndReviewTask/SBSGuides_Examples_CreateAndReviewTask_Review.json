@@ -1,0 +1,274 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "25c9d822-933e-4894-a113-5e8092a19f6e",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "25c9d822-933e-4894-a113-5e8092a19f6e": {
+        "position": {
+          "x": 159.20000000000002,
+          "y": 176
+        }
+      },
+      "0f3360e2-4cc6-43db-a407-48fc66c18ba7": {
+        "position": {
+          "x": 971.2,
+          "y": 459.20000000000005
+        }
+      },
+      "eede9423-4791-475b-8ce2-e2ad9763c8c3": {
+        "position": {
+          "x": 680,
+          "y": 190.4
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "Confirmation"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          }
+        }
+      },
+      "4692bb4b-bd83-4bf2-8ee8-ca37a95afdf3": {
+        "position": {
+          "x": 400,
+          "y": 184.8
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "form"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "Sections": {
+              "useJson": true
+            },
+            "Cancel": {
+              "useJson": true
+            },
+            "Next": {
+              "useJson": true
+            }
+          }
+        }
+      }
+    },
+    "name": "SBSGuides_Examples_CreateAndReviewTask_Review",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "25c9d822-933e-4894-a113-5e8092a19f6e",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "4692bb4b-bd83-4bf2-8ee8-ca37a95afdf3"
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "confirmation",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Your approval form has been received!",
+          "Next": "Return to previous view"
+        }
+      },
+      "Identifier": "eede9423-4791-475b-8ce2-e2ad9763c8c3",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+        "Conditions": [
+          {
+            "NextAction": "4692bb4b-bd83-4bf2-8ee8-ca37a95afdf3",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Next"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "form",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Review Task",
+          "Sections": [
+            {
+              "Heading": "Task Data",
+              "Type": "DataSection",
+              "IsEditable": false,
+              "Configuration": {},
+              "Items": [
+                {
+                  "AutoOpen": false,
+                  "Label": "Creation Date",
+                  "Value": "$.Attributes.Date",
+                  "Copyable": false
+                },
+                {
+                  "AutoOpen": false,
+                  "Label": "Creation Time",
+                  "Value": "$.Attributes.Time",
+                  "Copyable": false
+                },
+                {
+                  "AutoOpen": false,
+                  "Label": "Task Summary",
+                  "Value": "$.Attributes.Summary",
+                  "Copyable": false
+                },
+                {
+                  "AutoOpen": false,
+                  "Label": "Customer Type",
+                  "Value": "$.Attributes.CustomerType",
+                  "Copyable": false
+                },
+                {
+                  "AutoOpen": false,
+                  "Copyable": false,
+                  "Label": "Is this a priority?",
+                  "Value": "$.Attributes.Priority"
+                }
+              ]
+            },
+            {
+              "Heading": "Approval",
+              "Type": "FormSection",
+              "IsEditable": false,
+              "Configuration": {},
+              "Items": [
+                {
+                  "Required": false,
+                  "Fluid": false,
+                  "MultiSelect": false,
+                  "Type": "RadioGroup",
+                  "Label": "Approved?",
+                  "Name": "approved",
+                  "Options": [
+                    {
+                      "Label": "Yes",
+                      "Value": "yes"
+                    },
+                    {
+                      "Label": "No",
+                      "Value": "no"
+                    }
+                  ]
+                },
+                {
+                  "Required": false,
+                  "Fluid": false,
+                  "MultiSelect": false,
+                  "Type": "TextArea",
+                  "Label": "Comments",
+                  "Name": "comments"
+                }
+              ]
+            }
+          ],
+          "Cancel": {
+            "Label": "Cancel Approval"
+          },
+          "Next": {
+            "Label": "Submit Approval"
+          },
+          "SubHeading": "Review and submit"
+        }
+      },
+      "Identifier": "4692bb4b-bd83-4bf2-8ee8-ca37a95afdf3",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+        "Conditions": [
+          {
+            "NextAction": "eede9423-4791-475b-8ce2-e2ad9763c8c3",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          },
+          {
+            "NextAction": "eede9423-4791-475b-8ce2-e2ad9763c8c3",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Next"
+              ]
+            }
+          },
+          {
+            "NextAction": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Step"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "0f3360e2-4cc6-43db-a407-48fc66c18ba7",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    }
+  ]
+}
