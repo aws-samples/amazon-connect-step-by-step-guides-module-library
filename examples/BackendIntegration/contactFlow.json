@@ -114,7 +114,7 @@
         "parameters": {
           "ViewResource": {
             "Id": {
-              "displayName": "Form View"
+              "displayName": "Form"
             }
           },
           "InvocationTimeLimitSeconds": {
@@ -367,7 +367,7 @@
                 "Heading": "Card 2",
                 "Sections": [
                   {
-                    "TemplateString": "<TextContent>Clicking on either action will open a Form view.</TextContent>"
+                    "TemplateString": "<TextContent>Clicking on either action will open a Form.</TextContent>"
                   }
                 ],
                 "Actions": [
@@ -522,7 +522,7 @@
     {
       "Parameters": {
         "ViewResource": {
-          "Id": "formWithSteps",
+          "Id": "form",
           "Version": "Latest"
         },
         "InvocationTimeLimitSeconds": "18000",

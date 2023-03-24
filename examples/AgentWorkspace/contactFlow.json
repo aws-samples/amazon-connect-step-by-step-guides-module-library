@@ -251,7 +251,7 @@
         "parameters": {
           "ViewResource": {
             "Id": {
-              "displayName": "Form View"
+              "displayName": "Form"
             }
           },
           "InvocationTimeLimitSeconds": {
@@ -825,7 +825,7 @@
     {
       "Parameters": {
         "ViewResource": {
-          "Id": "formWithSteps",
+          "Id": "form",
           "Version": "Latest"
         },
         "InvocationTimeLimitSeconds": "300",
