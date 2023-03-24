@@ -13,6 +13,6 @@ The handler flow provides a basic contact flow that integrates your step-by-step
 - **WorkingQueue (line 104)** *queue ARN*. The queue we want to transfer the contact to after all relevant contact attributes are set.
 
 ## How to use
-The handler flow is used to set up the initial context for your contact and let Amazon Connect know what step-by-step guides to show to the agent when they are interacting with the contact. The contactFlow.json can be directly imported into your Amazon Connect instance (see [here](https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-import-export.html) for instructions) and the relevant user defined attributes should be edited before publishing, referencing the step-by-step guides you wish to use.
+The handler flow is used to set up the initial context for your contact and let Amazon Connect know what step-by-step guides to show to the agent when they are interacting with the contact. The contactFlow.json can be [directly imported into your Amazon Connect instance](https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-import-export.html) for instructions) and the relevant user defined attributes should be edited before publishing, referencing the step-by-step guides you wish to use.
 
 Once the handler flow is published you can connect a phone number directly to the handler flow to use it when receiving calls.

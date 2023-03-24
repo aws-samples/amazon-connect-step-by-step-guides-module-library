@@ -5,10 +5,10 @@ This guide demonstrates how we can use the information collected in our SBSGuide
 
 There are 2 main Views in this example:
 1. A Cards view, presenting the agent with potential guides fro the current call. We use Cards to group the information in a logical, user-friendly manner. The "Cancellations" card contains actions that the agent can use to send a cancellation notice.
-2. A Form view, which is used to collect customer information in order to populate the email and SMS templates. The fields are auto-populated if Amazon Connect Customer Profiles data is available for that contact.
+2. A Form, which is used to collect customer information in order to populate the email and SMS templates. The fields are auto-populated if Amazon Connect Customer Profiles data is available for that contact.
 
 ### Overall Flow
-Incoming contact (handlerFlow) -> Contact flow set the guides flow as `DefaultFlowForAgentUI` -> Send to queue -> Agent accepts contact -> Contact flow (contactFlow) -> Get profile -> Display Cards view -> Click "Card 2" -> Choose "Action 1" or "Action 2" -> Display Form view -> Enter details (will be prepopulated with customer profile data) -> Invoke Lambda to send SMS, and Invoke Lambda to send email -> Display Confirmation View -> Return to Cards view
+Incoming contact (handlerFlow) -> Contact flow set the guides flow as `DefaultFlowForAgentUI` -> Send to queue -> Agent accepts contact -> Contact flow (contactFlow) -> Get profile -> Display Cards view -> Click "Card 2" -> Choose "Action 1" or "Action 2" -> Display Form -> Enter details (will be prepopulated with customer profile data) -> Invoke Lambda to send SMS, and Invoke Lambda to send email -> Display Confirmation View -> Return to Cards view
 
 ## How to use
 

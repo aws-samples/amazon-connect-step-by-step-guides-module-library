@@ -19,7 +19,7 @@
             "2c383a61-44af-4cac-90e3-e68383c807e5": {
                 "position": { "x": 784.8, "y": 23.2 },
                 "parameters": {
-                    "ViewResource": { "Id": { "displayName": "Form View" } },
+                    "ViewResource": { "Id": { "displayName": "Form" } },
                     "InvocationTimeLimitSeconds": { "unit": 1 },
                     "ViewData": {
                         "AttributeBar": { "useJson": true },
@@ -119,7 +119,7 @@
         },
         {
             "Parameters": {
-                "ViewResource": { "Id": "formWithSteps", "Version": "Latest" },
+                "ViewResource": { "Id": "form", "Version": "Latest" },
                 "InvocationTimeLimitSeconds": "300",
                 "ViewData": {
                     "Heading": "Submit Disposition Codes",
