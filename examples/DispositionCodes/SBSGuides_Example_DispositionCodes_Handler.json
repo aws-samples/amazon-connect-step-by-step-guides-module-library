@@ -48,7 +48,7 @@
         ]
       }
     },
-    "name": "HandlerFlowForDispositionCodesExample",
+    "name": "SBSGuides_Example_DispositionCodes_Handler",
     "description": "",
     "type": "contactFlow",
     "status": "saved",

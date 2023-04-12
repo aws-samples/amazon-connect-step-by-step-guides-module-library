@@ -180,7 +180,7 @@
         "useDynamic": true
       }
     },
-    "name": "AgentWorkspaceExample_handler",
+    "name": "SBSGuides_Example_AgentWorkspace_Handler",
     "description": "",
     "type": "contactFlow",
     "status": "published",

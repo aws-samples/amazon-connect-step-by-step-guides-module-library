@@ -23,7 +23,7 @@ When activated, the agent is presented with a form to create a new case for the 
 ## How to use
 **IMPORTANT** Before using this module, you must have Cases enabled for your Amazon Connect instance. If you do not follow the [Enable Cases documentation](https://docs.aws.amazon.com/connect/latest/adminguide/enable-cases.html).
 
-To use this module we first want to create our Lambda function. This can be done by [creating a Lambda function](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html) within your AWS account and copying the sample code from the [provided sample Lambda](./sampleLambda/SBSGuides_Cases_SimplifyFormData.js).
+To use this module we first want to create our Lambda function. This can be done by [creating a Lambda function](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html) within your AWS account and copying the sample code from the [provided sample Lambda](./sampleLambda/SBSGuides_Cases_SimplifyFormData.mjs).
 
 We then need to give our Amazon Connect instance permission to invoke this function. To do this read [Add a Lambda function to your Amazon Connect instance](https://docs.aws.amazon.com/connect/latest/adminguide/connect-lambda-functions.html#add-lambda-function) and follow the steps for your Lambda function
 

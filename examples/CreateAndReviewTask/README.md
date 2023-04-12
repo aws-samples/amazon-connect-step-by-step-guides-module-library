@@ -23,7 +23,7 @@ To use this demo please:
 
 ### Implementation steps
 1. Create the simplify form data AWS Lambda function
-    1. Download [simplifyFormData.js](./sampleLambda/simplifyFormData.js) file in the sampleLambda folder.
+    1. Download [simplifyFormData.mjs](./sampleLambda/simplifyFormData.mjs) file in the sampleLambda folder.
     1. [Create a new AWS Lambda function](https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html) for NodeJS using the code from this file 
     1. [Associate the Lambda function with your Amazon Connect instance](https://docs.aws.amazon.com/connect/latest/adminguide/connect-lambda-functions.html#add-lambda-function).
 
