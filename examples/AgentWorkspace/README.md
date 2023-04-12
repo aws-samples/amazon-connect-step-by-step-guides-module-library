@@ -22,14 +22,14 @@ This example uses several Amazon Connect features that are not enabled by defaul
 
 ### Implementation steps
 1. Create the sample AWS Lambda function
-    1. Download the index.js file in the sampleLambda folder.
+    1. Download the index.mjs file in the sampleLambda folder.
     1. Create a new AWS Lambda function for NodeJS using the code from this file. For instructions on creating an AWS Lambda function see [here](https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html).
     1. Associate the Lambda function with your Amazon Connect instance. For instructions see [here](https://docs.aws.amazon.com/connect/latest/adminguide/connect-lambda-functions.html#add-lambda-function)
 
 1. Create and configure the main contact flow
-    1. Download the contactFlow.json
+    1. Download the SBSGuides_Example_AgentWorkspace_Guide.json
     1. In your Amazon Connect instance go to **Routing** > **ContactFlows** > **Create contact flow**.
-    1. Click the drop-down arrow on the right and choose **Import (beta)** and import the contactFlow.json.
+    1. Click the drop-down arrow on the right and choose **Import (beta)** and import the SBSGuides_Example_AgentWorkspace_Guide.json.
     1. Click the **Invoke AWS Lambda function** block. For the `Function ARN` select the AWS Lambda function created earlier. Click **save**.
     1. Click the **Create task** block. For the `Flow` section select the contact flow you want to use to route where the Task goes. If you are not sure which one to use we recommend **Sample queue customer** for testing purposes. Click **save**.
     1. Click **Publish**
@@ -39,9 +39,9 @@ This example uses several Amazon Connect features that are not enabled by defaul
 1. Create a Case template to use with the example. See [here](https://docs.aws.amazon.com/connect/latest/adminguide/case-templates.html) for instructions. For this example we want our Case to have fields for title, status, summary, and date/time Created.
 
 1. Create and configure the handler contact flow
-    1. Download the handlerFlow.json
+    1. Download the SBSGuides_Example_AgentWorkspace_Handler.json
     1. In your Amazon Connect instance go to **Routing** > **ContactFlows** > **Create contact flow**.
-    1. Click the drop-down arrow on the right and choose **Import (beta)** and import the handlerFlow.json.
+    1. Click the drop-down arrow on the right and choose **Import (beta)** and import the SBSGuides_Example_AgentWorkspace_Handler.json.
     1. Click the **Set contact attributes** block. Set the `DefaultFlowForAgentUI` attribute value as the contact flow ID you copied while creating the main contact flow.
     1. If you want to have a disconnect flow as well, set the `DisconnectFlowForAgentUI` attribute value as the contact flow ID of another step-by-step guide.. Otherwise delete the attribute.
     1. Set the `WorkingQueue` attribute value as the ARN of the queue you want to use while testing this example. To find the queue ARN in your Amazon Connect instance go to **Routing** > **Queues** and click the queue you want to use. Click the **Show additional queue information** dropdown to see the ARN.
