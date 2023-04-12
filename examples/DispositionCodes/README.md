@@ -8,7 +8,7 @@ The disposition codes example provides a complete implementation of how you can 
 ## How to use
 
 ### Prerequisites
-This example uses AWS Lambda to attach contac attributes to a contact. To use this demo please ensure you have:
+This example uses AWS Lambda to attach contact attributes to a contact. To use this demo please ensure you have:
 1. The ability to create [AWS Lambda](https://aws.amazon.com/lambda/) functions with permission to use [UpdateContactAttributes](https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactAttributes.html) on your Amazon Connect instance.
 ### Implementation steps
 1. Create the sample AWS Lambda functions
