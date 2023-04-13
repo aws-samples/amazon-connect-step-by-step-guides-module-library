@@ -1,0 +1,266 @@
+{
+    "Version": "2019-10-30",
+    "StartAction": "a883f0f7-0504-494d-a917-0e0dbbe86df8",
+    "Metadata": {
+      "entryPointPosition": {
+        "x": -88.8,
+        "y": 60
+      },
+      "ActionMetadata": {
+        "3c333159-9fcb-4766-89cf-928dec499c61": {
+          "position": {
+            "x": 1259.2,
+            "y": 88.8
+          }
+        },
+        "b0dd877c-7fbb-4dcf-a12f-b8af02921c90": {
+          "position": {
+            "x": 999.2,
+            "y": 80
+          },
+          "parameters": {
+            "QueueId": {
+              "displayName": "BasicQueue"
+            }
+          },
+          "queue": {
+            "text": "BasicQueue"
+          }
+        },
+        "b2c55f7d-2c23-4273-816a-cf435f1eb52d": {
+          "position": {
+            "x": 756.8,
+            "y": 47.2
+          },
+          "dynamicParams": []
+        },
+        "2e69c35b-f4cb-40ff-b536-a8abc7b25c44": {
+          "position": {
+            "x": 1512,
+            "y": 128
+          }
+        },
+        "cc93cb21-44b7-43da-8a8d-c309c55aa424": {
+          "position": {
+            "x": 502.4,
+            "y": 23.2
+          },
+          "parameters": {
+            "Attributes": {
+              "FirstName": {
+                "useDynamic": true
+              },
+              "LastName": {
+                "useDynamic": true
+              },
+              "CityDeparture": {
+                "useDynamic": true
+              },
+              "CityArrival": {
+                "useDynamic": true
+              },
+              "ConfirmationNumber": {
+                "useDynamic": true
+              },
+              "FlightCancellation": {
+                "useDynamic": true
+              }
+            }
+          },
+          "dynamicParams": [
+            "FirstName",
+            "LastName",
+            "CityDeparture",
+            "CityArrival",
+            "ConfirmationNumber",
+            "FlightCancellation"
+          ]
+        },
+        "83b2112b-82ec-44a4-87c6-c858d37b1507": {
+          "position": {
+            "x": 204.8,
+            "y": 6.4
+          },
+          "parameters": {
+            "LexV2Bot": {
+              "AliasArn": {
+                "displayName": "TestBotAlias",
+                "useLexBotDropdown": true,
+                "lexV2BotName": "CustomerAirlineSupport"
+              }
+            }
+          },
+          "useLexBotDropdown": true,
+          "lexV2BotName": "CustomerAirlineSupport",
+          "lexV2BotAliasName": "TestBotAlias",
+          "conditionMetadata": [
+            {
+              "id": "e4c9c3bf-72e4-4b9f-85f0-61580f743264",
+              "operator": {
+                "name": "Equals",
+                "value": "Equals",
+                "shortDisplay": "="
+              },
+              "value": "FlightCancellation"
+            },
+            {
+              "id": "ae872d51-174b-42de-9722-e3689a63f477",
+              "operator": {
+                "name": "Equals",
+                "value": "Equals",
+                "shortDisplay": "="
+              },
+              "value": "FallbackIntent"
+            }
+          ]
+        },
+        "a883f0f7-0504-494d-a917-0e0dbbe86df8": {
+          "position": {
+            "x": -9.6,
+            "y": 54.4
+          }
+        }
+      },
+      "name": "SBS_Lex_Integration_Handler",
+      "description": "",
+      "type": "contactFlow",
+      "status": "published",
+      "hash": {}
+    },
+    "Actions": [
+      {
+        "Parameters": {},
+        "Identifier": "3c333159-9fcb-4766-89cf-928dec499c61",
+        "Type": "TransferContactToQueue",
+        "Transitions": {
+          "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+          "Errors": [
+            {
+              "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+              "ErrorType": "QueueAtCapacity"
+            },
+            {
+              "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+              "ErrorType": "NoMatchingError"
+            }
+          ]
+        }
+      },
+      {
+        "Parameters": {
+          "QueueId": "arn:aws:connect:us-east-1:751927686059:instance/90d7384d-7885-4b22-a82b-900da9926dbe/queue/df3ab76f-f462-46a2-95a3-b5eebe97f501"
+        },
+        "Identifier": "b0dd877c-7fbb-4dcf-a12f-b8af02921c90",
+        "Type": "UpdateContactTargetQueue",
+        "Transitions": {
+          "NextAction": "3c333159-9fcb-4766-89cf-928dec499c61",
+          "Errors": [
+            {
+              "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+              "ErrorType": "NoMatchingError"
+            }
+          ]
+        }
+      },
+      {
+        "Parameters": {
+          "Attributes": {
+            "DefaultFlowForAgentUI": "883d863a-a7cc-4219-9d89-ebf48b540816"
+          }
+        },
+        "Identifier": "b2c55f7d-2c23-4273-816a-cf435f1eb52d",
+        "Type": "UpdateContactAttributes",
+        "Transitions": {
+          "NextAction": "b0dd877c-7fbb-4dcf-a12f-b8af02921c90",
+          "Errors": [
+            {
+              "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+              "ErrorType": "NoMatchingError"
+            }
+          ]
+        }
+      },
+      {
+        "Parameters": {},
+        "Identifier": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+        "Type": "DisconnectParticipant",
+        "Transitions": {}
+      },
+      {
+        "Parameters": {
+          "Attributes": {
+            "FirstName": "$.Lex.Slots.FirstName",
+            "LastName": "$.Lex.Slots.LastName",
+            "CityDeparture": "$.Lex.Slots.CityDeparture",
+            "CityArrival": "$.Lex.Slots.CityArrival",
+            "ConfirmationNumber": "$.Lex.Slots.ConfirmationNumber",
+            "FlightCancellation": "$.Lex.IntentName"
+          }
+        },
+        "Identifier": "cc93cb21-44b7-43da-8a8d-c309c55aa424",
+        "Type": "UpdateContactAttributes",
+        "Transitions": {
+          "NextAction": "b2c55f7d-2c23-4273-816a-cf435f1eb52d",
+          "Errors": [
+            {
+              "NextAction": "b2c55f7d-2c23-4273-816a-cf435f1eb52d",
+              "ErrorType": "NoMatchingError"
+            }
+          ]
+        }
+      },
+      {
+        "Parameters": {
+          "Text": "Hi, welcome to the airline customer support, how can I help you?",
+          "LexV2Bot": {
+            "AliasArn": ""
+          }
+        },
+        "Identifier": "83b2112b-82ec-44a4-87c6-c858d37b1507",
+        "Type": "ConnectParticipantWithLexBot",
+        "Transitions": {
+          "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+          "Conditions": [
+            {
+              "NextAction": "cc93cb21-44b7-43da-8a8d-c309c55aa424",
+              "Condition": {
+                "Operator": "Equals",
+                "Operands": [
+                  "FlightCancellation"
+                ]
+              }
+            },
+            {
+              "NextAction": "cc93cb21-44b7-43da-8a8d-c309c55aa424",
+              "Condition": {
+                "Operator": "Equals",
+                "Operands": [
+                  "FallbackIntent"
+                ]
+              }
+            }
+          ],
+          "Errors": [
+            {
+              "NextAction": "cc93cb21-44b7-43da-8a8d-c309c55aa424",
+              "ErrorType": "NoMatchingCondition"
+            },
+            {
+              "NextAction": "2e69c35b-f4cb-40ff-b536-a8abc7b25c44",
+              "ErrorType": "NoMatchingError"
+            }
+          ]
+        }
+      },
+      {
+        "Parameters": {
+          "FlowLoggingBehavior": "Enabled"
+        },
+        "Identifier": "a883f0f7-0504-494d-a917-0e0dbbe86df8",
+        "Type": "UpdateFlowLoggingBehavior",
+        "Transitions": {
+          "NextAction": "83b2112b-82ec-44a4-87c6-c858d37b1507"
+        }
+      }
+    ]
+  }

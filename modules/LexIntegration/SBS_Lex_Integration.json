@@ -1,0 +1,160 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "6b88cd47-404e-47b1-998c-9d244d5cf37a",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "3dbf9d1d-c236-4b94-b498-df367d193387": {
+        "position": {
+          "x": 793.6,
+          "y": 458.4
+        }
+      },
+      "66cf7a02-7720-4aa3-9d42-1edac5d41f28": {
+        "position": {
+          "x": 509.6,
+          "y": 421.6
+        }
+      },
+      "6b88cd47-404e-47b1-998c-9d244d5cf37a": {
+        "position": {
+          "x": 340,
+          "y": 66.4
+        },
+        "parameters": {
+          "ViewResource": {
+            "Id": {
+              "displayName": "List"
+            }
+          },
+          "InvocationTimeLimitSeconds": {
+            "unit": 1
+          },
+          "ViewData": {
+            "Back": {
+              "useJson": true
+            },
+            "Items": {
+              "useJson": true
+            }
+          }
+        }
+      }
+    },
+    "name": "SBS_Lex_Integration",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {},
+      "Identifier": "3dbf9d1d-c236-4b94-b498-df367d193387",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Text": "An error has occurred!"
+      },
+      "Identifier": "66cf7a02-7720-4aa3-9d42-1edac5d41f28",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "3dbf9d1d-c236-4b94-b498-df367d193387",
+        "Errors": [
+          {
+            "NextAction": "3dbf9d1d-c236-4b94-b498-df367d193387",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ViewResource": {
+          "Id": "list",
+          "Version": "Latest"
+        },
+        "InvocationTimeLimitSeconds": "300",
+        "ViewData": {
+          "Heading": "Amazon Lex Integration ",
+          "Back": {
+            "Label": "Back"
+          },
+          "Items": [
+            {
+              "Heading": "First Name:",
+              "Description": "$.Attributes.FirstName",
+              "Icon": "Person"
+            },
+            {
+              "Heading": "Last Name:",
+              "Description": "$.Attributes.LastName",
+              "Icon": "Person"
+            },
+            {
+              "Heading": "Arrival City",
+              "Description": "$.Attributes.CityArrival",
+              "Icon": "Airplane"
+            },
+            {
+              "Heading": "Destination City:",
+              "Description": "$.Attributes.CityDeparture",
+              "Icon": "Airplane"
+            },
+            {},
+            {
+              "Heading": "Confirmation Number",
+              "Description": "$.Attributes.ConfirmationNumber",
+              "Icon": "test"
+            }
+          ],
+          "SubHeading": "$.Attributes.FirstName $.Attributes.LastName is using the Intent Name: $.Attributes.IntentName intent to cancel their upcoming flight. Here is the customer's information:"
+        }
+      },
+      "Identifier": "6b88cd47-404e-47b1-998c-9d244d5cf37a",
+      "Type": "ShowView",
+      "Transitions": {
+        "NextAction": "66cf7a02-7720-4aa3-9d42-1edac5d41f28",
+        "Conditions": [
+          {
+            "NextAction": "3dbf9d1d-c236-4b94-b498-df367d193387",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "ActionSelected"
+              ]
+            }
+          },
+          {
+            "NextAction": "3dbf9d1d-c236-4b94-b498-df367d193387",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Back"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "66cf7a02-7720-4aa3-9d42-1edac5d41f28",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "66cf7a02-7720-4aa3-9d42-1edac5d41f28",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "66cf7a02-7720-4aa3-9d42-1edac5d41f28",
+            "ErrorType": "TimeLimitExceeded"
+          }
+        ]
+      }
+    }
+  ]
+}
