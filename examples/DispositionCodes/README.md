@@ -12,7 +12,7 @@ This example uses AWS Lambda to attach contact attributes to a contact. To use t
 1. The ability to create [AWS Lambda](https://aws.amazon.com/lambda/) functions with permission to use [UpdateContactAttributes](https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactAttributes.html) on your Amazon Connect instance.
 ### Implementation steps
 1. Create the sample AWS Lambda functions
-    1. Download the [updateContactAttributes.mjs](./sampleLambda/updateContactAttributes.mjs)
+    1. Download the [updateContactAttributes.mjs](./sampleLamba/updateContactAttributes.mjs)
     1. Create a new AWS Lambda function for NodeJS using the code from sendEmail.mjs. See instructions on [creating an AWS Lambda function](https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html).
     1. Navigate to the AWS Lambda function's [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html) by choosing **Configuration** > **Permissions** and clicking the link for the **Role name**. This will open up the IAM manager tab.
     1. [Attach an inline policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console) to your AWS Lambda role based on the below example. **IMPORTANT: the policy below is meant as an example. Always reference specific ARNs and follow the [principle of least privilege](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)**
