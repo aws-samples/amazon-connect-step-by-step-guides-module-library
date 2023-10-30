@@ -27,3 +27,7 @@ Within the Examples folder are subfolders showcasing complete implementations of
 To learn more about step-by-step guides for the Amazon Connect agent workspace check out the [official documentation](https://docs.aws.amazon.com/connect/latest/adminguide/agent-workspace.html).
 
 If you prefer learning by example check out the [Getting started with step-by-step guides for the Amazon Connect agent workspace](https://aws.amazon.com/blogs/contact-center/getting-started-with-step-by-step-guides-for-the-amazon-connect-agent-workspace/) blog post.
+
+| :bookmark_tabs: Guides Documentation                                                                        | 
+|--------------------------------------------------------------------------------------------|
+| Check out our official [Guides documentation](https://d2ote8qdyv1arb.cloudfront.net/?path=/story/overview--page) for more details on how to use Views along with JSON schemas for our UI and Form components. |
